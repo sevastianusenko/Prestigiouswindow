@@ -11,79 +11,68 @@ import { site } from "@/lib/site";
 export default function Home() {
   return (
     <>
-      {/* HERO */}
-      <section className="mx-auto max-w-7xl px-5 sm:px-8 pt-14 sm:pt-20 pb-16 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-        <div className="order-2 lg:order-1">
-          <Eyebrow>{site.serviceCounty} · Windows &amp; Doors</Eyebrow>
-          <SectionHeading as="h1" className="text-4xl sm:text-5xl lg:text-[3.4rem]">
-            Fitted precisely.
-            <br />
-            Built to be forgotten about.
-          </SectionHeading>
-          <p className="mt-6 text-lg text-graphite/75 max-w-lg">
-            Replacement and repair for windows and doors, done by people who measure
-            twice and show up when they say they will. Based in {site.baseTown},
-            working across {site.serviceCounty}.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <ButtonLink href="/contact">Get a Quote</ButtonLink>
-            <ButtonLink href="/repair-or-replace" variant="ghost-dark">
-              Repair or Replace?
-            </ButtonLink>
+      {/* HERO — dark, full-bleed, no eyebrow-heading-paragraph template cadence */}
+      <section className="bg-graphite text-quartz">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 pt-16 sm:pt-24 pb-0 grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-end">
+          <div className="pb-14 sm:pb-20">
+            <span className="font-mono text-xs tracking-[0.3em] uppercase text-gold">
+              {site.serviceCounty}
+            </span>
+            <h1 className="font-display font-semibold text-balance leading-[0.98] text-quartz mt-5 text-[3.2rem] sm:text-[4.5rem] lg:text-[5.5rem]">
+              Fitted
+              <br />
+              precisely.
+            </h1>
+            <p className="mt-8 text-lg text-quartz/70 max-w-md">
+              Windows and doors — replaced and repaired by people who measure
+              twice. Based in {site.baseTown}, working across {site.serviceCounty}.
+              Not a franchise, not a script.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <ButtonLink href="/contact">Get a Quote</ButtonLink>
+              <ButtonLink href="/repair-or-replace" variant="ghost-light">
+                Repair or Replace?
+              </ButtonLink>
+            </div>
           </div>
-        </div>
 
-        <div className="order-1 lg:order-2 relative p-2">
-          <div className="frame-line absolute inset-0" aria-hidden />
-          <div className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] overflow-hidden">
-            <Image
-              src="/photos/hero-townhouse.jpg"
-              alt="A well-kept brick home with dark-trimmed double-hung windows and a paneled entry door"
-              fill
-              priority
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-            />
+          <div className="relative p-2 self-end">
+            <div className="frame-line frame-line-light absolute inset-0" aria-hidden />
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <Image
+                src="/photos/hero-townhouse.jpg"
+                alt="A well-kept brick home with dark-trimmed double-hung windows and a paneled entry door"
+                fill
+                priority
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       <TrustBar />
 
-      {/* DOORS / WINDOWS asymmetric split */}
-      <section className="mx-auto max-w-7xl px-5 sm:px-8 py-20 sm:py-28">
-        <Eyebrow>What we do</Eyebrow>
-        <SectionHeading as="h2" className="text-3xl sm:text-4xl max-w-xl">
-          Two trades, held to the same standard.
-        </SectionHeading>
-
-        <div className="mt-14 space-y-20">
-          {/* Doors first — matches demand: shorter sales cycle, less contested market */}
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="relative p-2">
-              <div className="frame-line absolute inset-0" aria-hidden />
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src="/photos/door-waverly.jpg"
-                  alt="A paneled wood entry door with transom window and iron railings"
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
+      {/* DOORS / WINDOWS — big graphic numerals carry the "two trades" idea */}
+      <section className="mx-auto max-w-7xl px-5 sm:px-8 py-24 sm:py-32">
+        <div className="space-y-24">
+          <div className="grid lg:grid-cols-[auto_1fr_1fr] gap-8 lg:gap-10 items-center">
+            <span
+              aria-hidden
+              className="font-display font-semibold text-gold/25 leading-none text-[6rem] sm:text-[9rem] lg:text-[11rem] -mb-4 lg:mb-0 select-none"
+            >
+              01
+            </span>
             <div>
-              <span className="font-mono text-xs tracking-[0.25em] uppercase text-gold">
-                01 — Doors
-              </span>
-              <h3 className="font-display text-2xl sm:text-3xl font-semibold mt-3">
-                Entry, patio, and storm doors
-              </h3>
-              <p className="mt-4 text-graphite/70 max-w-md">
-                A door gets used more than almost anything else in a house — opened,
-                slammed, leaned on, left in the sun. We install and repair entry
-                doors, sliding and patio doors, and storm doors, fitted so they still
-                close right in five years.
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold">
+                Doors
+              </h2>
+              <p className="mt-4 text-graphite/70 max-w-sm">
+                A door gets used more than almost anything else in a house —
+                opened, slammed, leaned on, left in the sun. Entry, patio,
+                sliding, and storm doors, fitted so they still close right in
+                five years.
               </p>
               <div className="mt-6 flex gap-6 font-mono text-xs tracking-wide uppercase">
                 <Link href="/doors/replacement" className="text-graphite hover:text-gold">
@@ -94,33 +83,54 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="lg:order-2 relative p-2">
+            <div className="relative p-2">
               <div className="frame-line absolute inset-0" aria-hidden />
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative aspect-[5/4] overflow-hidden">
                 <Image
-                  src="/photos/window-green-shutters.jpg"
-                  alt="A house exterior with multi-pane double-hung windows and painted shutters"
+                  src="/photos/door-waverly.jpg"
+                  alt="A paneled wood entry door with transom window and iron railings"
                   fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 32vw, 100vw"
                   className="object-cover"
                 />
               </div>
             </div>
-            <div className="lg:order-1">
-              <span className="font-mono text-xs tracking-[0.25em] uppercase text-gold">
-                02 — Windows
-              </span>
-              <h3 className="font-display text-2xl sm:text-3xl font-semibold mt-3">
-                Replacement, repair, and restoration
-              </h3>
-              <p className="mt-4 text-graphite/70 max-w-md">
-                Full replacement when the frame has failed, targeted repair when it
-                hasn&apos;t — fogged glass, broken seals, sashes that won&apos;t
-                balance. On older homes, we work with the original opening instead of
-                resizing it whenever we can.
+          </div>
+
+          <div className="grid lg:grid-cols-[auto_1fr_1fr] gap-8 lg:gap-10 items-center">
+            <span
+              aria-hidden
+              className="font-display font-semibold text-gold/25 leading-none text-[6rem] sm:text-[9rem] lg:text-[11rem] -mb-4 lg:mb-0 select-none lg:hidden"
+            >
+              02
+            </span>
+            <div className="relative p-2 lg:order-1">
+              <div className="frame-line absolute inset-0" aria-hidden />
+              <div className="relative aspect-[5/4] overflow-hidden">
+                <Image
+                  src="/photos/window-green-shutters.jpg"
+                  alt="A house exterior with multi-pane double-hung windows and painted shutters"
+                  fill
+                  sizes="(min-width: 1024px) 32vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <span
+              aria-hidden
+              className="hidden lg:block font-display font-semibold text-gold/25 leading-none text-[11rem] select-none lg:order-2"
+            >
+              02
+            </span>
+            <div className="lg:order-3">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold">
+                Windows
+              </h2>
+              <p className="mt-4 text-graphite/70 max-w-sm">
+                Full replacement when the frame has failed, targeted repair
+                when it hasn&apos;t — fogged glass, broken seals, sashes that
+                won&apos;t balance. On older homes, we work with the original
+                opening instead of resizing it.
               </p>
               <div className="mt-6 flex gap-6 font-mono text-xs tracking-wide uppercase">
                 <Link href="/windows/replacement" className="text-graphite hover:text-gold">
@@ -141,11 +151,10 @@ export default function Home() {
       <section className="bg-graphite text-quartz py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative p-2">
-            <div className="absolute inset-0 border border-gold/30" aria-hidden />
-            <div className="absolute inset-2 border border-gold/15" aria-hidden />
-            <div className="relative aspect-[4/3] overflow-hidden m-2">
+            <div className="frame-line frame-line-light absolute inset-0" aria-hidden />
+            <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src="/photos/wood-texture-1.jpg"
+                src="/photos/wood-texture-2.jpg"
                 alt="Close detail of natural wood grain"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
@@ -219,32 +228,39 @@ export default function Home() {
 
       <Divider className="max-w-7xl mx-auto" />
 
-      {/* OLD HOMES CALLOUT */}
-      <section className="mx-auto max-w-7xl px-5 sm:px-8 py-20 sm:py-28 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-        <div>
-          <Eyebrow>An honest gap</Eyebrow>
-          <SectionHeading as="h2" className="text-3xl sm:text-4xl">
-            Old house? The opening usually doesn&apos;t need to change.
-          </SectionHeading>
-          <p className="mt-5 text-graphite/70 max-w-md">
-            A lot of companies quote older homes like new construction — resize
-            everything, lose the original proportions. We measure the existing
-            opening first and work with it whenever the structure allows.
-          </p>
-          <ButtonLink href="/old-homes" variant="ghost-dark" className="mt-6">
-            Windows &amp; doors for older homes
-          </ButtonLink>
+      {/* OLD HOMES — full-bleed image with overlay, a genuinely different
+          section shape than the boxed side-by-sides used elsewhere */}
+      <section className="relative isolate my-20 sm:my-28">
+        <div className="relative h-[560px] sm:h-[620px] overflow-hidden">
+          <Image
+            src="/photos/house-jasper-st.jpg"
+            alt="A period American home with original window proportions intact"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-graphite/95 via-graphite/55 to-graphite/10"
+            aria-hidden
+          />
         </div>
-        <div className="relative p-2">
-          <div className="frame-line absolute inset-0" aria-hidden />
-          <div className="relative aspect-[4/3] overflow-hidden">
-            <Image
-              src="/photos/house-jasper-st.jpg"
-              alt="A historic American home with original window proportions intact"
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-            />
+        <div className="absolute inset-0 flex items-end">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 pb-14 sm:pb-20 w-full">
+            <div className="max-w-xl">
+              <Eyebrow>An honest gap</Eyebrow>
+              <h2 className="font-display font-semibold text-balance leading-[1.05] text-quartz text-3xl sm:text-5xl">
+                Old house? The opening usually doesn&apos;t need to change.
+              </h2>
+              <p className="mt-5 text-quartz/80 max-w-md">
+                A lot of companies quote older homes like new construction —
+                resize everything, lose the original proportions. We measure
+                the existing opening first and work with it whenever the
+                structure allows.
+              </p>
+              <ButtonLink href="/old-homes" variant="ghost-light" className="mt-7">
+                Windows &amp; doors for older homes
+              </ButtonLink>
+            </div>
           </div>
         </div>
       </section>

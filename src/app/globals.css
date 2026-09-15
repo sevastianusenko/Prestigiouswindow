@@ -1,15 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-quartz: #edebe7;
-  --color-quartz-deep: #e2ded6;
-  --color-graphite: #1b1a18;
-  --color-graphite-soft: #2a2825;
+  /* Cooler, starker stone — deliberately NOT warm cream (that's the
+     default "AI premium" look: cream + serif + earth accent). */
+  --color-quartz: #e7e8e3;
+  --color-quartz-deep: #dadbd4;
+  --color-graphite: #17181a;
+  --color-graphite-soft: #232527;
   --color-gold: #a9813f;
   --color-gold-bright: #c6a05c;
   --color-silver: #9aa1a6;
-  --color-mist: #c9c3ba;
-  --color-cream: #f6f4f0;
+  --color-mist: #c4c5bd;
+  --color-cream: #f3f3ef;
 
   --font-display: var(--font-source-serif);
   --font-sans: var(--font-plex-sans);
@@ -47,7 +49,8 @@ body {
   }
 }
 
-/* Двойная линия — сечение оконного профиля. Сквозной приём сайта. */
+/* Двойная линия — сечение оконного профиля. Сквозной приём сайта.
+   Нарочито заметная, а не декоративный тонкий бордер. */
 .frame-line {
   position: relative;
 }
@@ -55,14 +58,23 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  border: 1px solid var(--color-mist);
+  border: 2px solid var(--color-graphite);
+  z-index: 2;
 }
 .frame-line::after {
   content: "";
   position: absolute;
-  inset: 6px;
-  border: 1px solid color-mix(in srgb, var(--color-mist) 55%, transparent);
+  inset: 9px;
+  border: 1px solid var(--color-gold);
   pointer-events: none;
+  z-index: 2;
+}
+
+.frame-line-light::before {
+  border-color: var(--color-quartz);
+}
+.frame-line-light::after {
+  border-color: var(--color-gold-bright);
 }
 
 .text-balance {
