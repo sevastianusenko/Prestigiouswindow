@@ -59,6 +59,48 @@ const signs = [
   },
 ];
 
+const reasons = [
+  {
+    title: "Real crew, not subcontractors",
+    body: "Reviews name our actual installers because they're the same people who show up every time, not a rotating cast of subs.",
+  },
+  {
+    title: "The kind of detail people notice",
+    body: "Customers bring up things like clean caulk lines without being asked. That's not an accident, it's the standard.",
+  },
+  {
+    title: "People call us back",
+    body: "More than one customer has hired us twice, once for windows and doors, later for something else entirely.",
+  },
+  {
+    title: "Five stars, unedited",
+    body: "Every review on our Google profile is five stars. We don't write them and we don't hide the bad ones, because there aren't any yet.",
+  },
+];
+
+const reviews = [
+  {
+    name: "Nicholas Obert",
+    time: "5 months ago",
+    text: "From the windows to the doors to the amazing siding and shutters, Tim and his guy's work is absolutely prestigious. Me and my wife couldn't be happier with everything that has been done to make our house a new home.",
+  },
+  {
+    name: "Lois Domanico",
+    time: "4 weeks ago",
+    text: "I just had a new slider door installed and I am so thrilled with the way it turned out. Vlad and Nick were my installers and they did an excellent job. They were friendly, very neat, and paid attention to the small details like the caulking.",
+  },
+  {
+    name: "Lou Sala",
+    time: "1 month ago",
+    text: "After Tim installed new windows and sliders at my home, I used Prestigious Home again on two complete bathroom remodels at my mother's condo and couldn't be happier. As a second time customer, I knew there wouldn't be an issue using him again.",
+  },
+  {
+    name: "Broken Wheel",
+    time: "4 months ago",
+    text: "Tim and his crew have gone above and beyond for me. I couldn't be happier.",
+  },
+];
+
 const products = [
   {
     label: "Doors first — shorter cycle, less contested market",
@@ -264,6 +306,47 @@ export default function Home() {
                 <dd className="text-ink/80">Install, cleanup, and a final walkthrough</dd>
               </div>
             </dl>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <section className="mx-auto max-w-7xl px-5 sm:px-8 py-20 sm:py-28">
+        <Eyebrow>Why choose us</Eyebrow>
+        <SectionHeading as="h2" className="text-3xl sm:text-4xl max-w-2xl">
+          What our customers actually notice
+        </SectionHeading>
+        <div className="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-10">
+          {reasons.map((r) => (
+            <div key={r.title} className="border-t border-line pt-5">
+              <h3 className="font-display font-bold text-lg text-ink">{r.title}</h3>
+              <p className="mt-2 text-sm text-ink/70">{r.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="bg-ink py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <Eyebrow>What people say</Eyebrow>
+          <SectionHeading as="h2" className="text-3xl sm:text-4xl text-white max-w-2xl">
+            Real reviews, straight from Google
+          </SectionHeading>
+          <div className="mt-12 grid sm:grid-cols-2 gap-6">
+            {reviews.map((r) => (
+              <div key={r.name} className="rounded-lg border border-white/15 bg-white/5 p-6 sm:p-8">
+                <span className="text-gold tracking-wide" aria-hidden>
+                  ★★★★★
+                </span>
+                <p className="mt-4 text-white/85 text-sm leading-relaxed">
+                  &quot;{r.text}&quot;
+                </p>
+                <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-white/50">
+                  {r.name} · {r.time}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
