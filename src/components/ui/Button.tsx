@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 const base =
-  "inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium tracking-wide uppercase transition-colors duration-200";
+  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200 border-2";
 
 export function ButtonLink({
   href,
@@ -16,9 +16,9 @@ export function ButtonLink({
   className?: string;
 }) {
   const styles = {
-    primary: "bg-graphite text-quartz hover:bg-gold hover:text-graphite",
-    "ghost-dark": "border border-graphite text-graphite hover:bg-graphite hover:text-quartz",
-    "ghost-light": "border border-quartz/60 text-quartz hover:bg-quartz hover:text-graphite",
+    primary: "bg-white text-ink border-gold hover:bg-gold hover:text-ink",
+    "ghost-dark": "bg-transparent text-ink border-ink hover:bg-ink hover:text-white",
+    "ghost-light": "bg-transparent text-white border-white hover:bg-white hover:text-ink",
   }[variant];
 
   return (

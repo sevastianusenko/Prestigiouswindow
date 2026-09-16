@@ -43,7 +43,7 @@ export default function DoorRepairPage() {
           <SectionHeading as="h1" className="text-4xl sm:text-5xl">
             Before you replace a door, have someone actually look at it.
           </SectionHeading>
-          <p className="mt-6 text-lg text-graphite/75 max-w-lg">
+          <p className="mt-6 text-lg text-ink/75 max-w-lg">
             A door that sticks or won&apos;t latch is almost never the whole unit
             failing — it&apos;s a hinge, a settled frame, or a worn roller. We fix
             what&apos;s fixable and say so plainly when it isn&apos;t.
@@ -55,9 +55,7 @@ export default function DoorRepairPage() {
             </ButtonLink>
           </div>
         </div>
-        <div className="relative p-2">
-          <div className="frame-line absolute inset-0" aria-hidden />
-          <div className="relative aspect-[4/3] overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
               src="/photos/door-waverly.jpg"
               alt="A paneled wood entry door with transom window and iron railings"
@@ -66,7 +64,6 @@ export default function DoorRepairPage() {
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
             />
-          </div>
         </div>
       </section>
 
@@ -75,15 +72,15 @@ export default function DoorRepairPage() {
         <SectionHeading as="h2" className="text-2xl sm:text-3xl max-w-2xl">
           Common calls, and what they usually turn out to be
         </SectionHeading>
-        <div className="mt-10 divide-y divide-mist">
+        <div className="mt-10 divide-y divide-line">
           {repairs.map((r) => (
             <div key={r.name} className="grid sm:grid-cols-[1fr_2fr] gap-3 sm:gap-10 py-6">
               <h3 className="font-display text-lg font-semibold">{r.name}</h3>
-              <p className="text-graphite/70 text-sm">{r.detail}</p>
+              <p className="text-ink/70 text-sm">{r.detail}</p>
             </div>
           ))}
         </div>
-        <p className="mt-8 text-sm text-graphite/60 max-w-2xl">
+        <p className="mt-8 text-sm text-ink/60 max-w-2xl">
           Jamb rotted through completely, or the door&apos;s been out of square for
           years?{" "}
           <Link href="/doors/replacement" className="text-gold underline underline-offset-4">
@@ -101,7 +98,7 @@ export default function DoorRepairPage() {
           <SectionHeading as="h2" className="text-2xl sm:text-3xl max-w-md">
             A five-minute look usually tells us which one it is.
           </SectionHeading>
-          <p className="mt-5 text-graphite/70 max-w-md">
+          <p className="mt-5 text-ink/70 max-w-md">
             Send a couple of photos or have us out for a quick look — most door
             repairs are diagnosed on sight, before any quote is written.
           </p>

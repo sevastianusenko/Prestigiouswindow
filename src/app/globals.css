@@ -1,21 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  /* Cooler, starker stone — deliberately NOT warm cream (that's the
-     default "AI premium" look: cream + serif + earth accent). */
-  --color-quartz: #e7e8e3;
-  --color-quartz-deep: #dadbd4;
-  --color-graphite: #17181a;
-  --color-graphite-soft: #232527;
+  --color-ink: #101010;
+  --color-paper: #ffffff;
+  --color-fog: #f2f2ef;
+  --color-fog-deep: #e6e5e0;
   --color-gold: #a9813f;
   --color-gold-bright: #c6a05c;
-  --color-silver: #9aa1a6;
-  --color-mist: #c4c5bd;
-  --color-cream: #f3f3ef;
+  --color-line: #d8d6cf;
 
-  --font-display: var(--font-source-serif);
-  --font-sans: var(--font-plex-sans);
-  --font-mono: var(--font-plex-mono);
+  --font-display: var(--font-jost);
+  --font-sans: var(--font-open-sans);
 }
 
 html {
@@ -23,14 +18,14 @@ html {
 }
 
 body {
-  background: var(--color-quartz);
-  color: var(--color-graphite);
-  font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
 ::selection {
   background: var(--color-gold);
-  color: var(--color-cream);
+  color: var(--color-paper);
 }
 
 :focus-visible {
@@ -47,34 +42,6 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/* Двойная линия — сечение оконного профиля. Сквозной приём сайта.
-   Нарочито заметная, а не декоративный тонкий бордер. */
-.frame-line {
-  position: relative;
-}
-.frame-line::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 2px solid var(--color-graphite);
-  z-index: 2;
-}
-.frame-line::after {
-  content: "";
-  position: absolute;
-  inset: 9px;
-  border: 1px solid var(--color-gold);
-  pointer-events: none;
-  z-index: 2;
-}
-
-.frame-line-light::before {
-  border-color: var(--color-quartz);
-}
-.frame-line-light::after {
-  border-color: var(--color-gold-bright);
 }
 
 .text-balance {

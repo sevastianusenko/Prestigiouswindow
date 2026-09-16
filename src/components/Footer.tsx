@@ -5,21 +5,21 @@ import { site } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="bg-graphite text-quartz mt-24">
+    <footer className="bg-ink text-white mt-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Logo tone="light" className="h-14 w-auto" />
-          <p className="mt-4 text-sm text-quartz/70 max-w-xs">
+          <p className="mt-4 text-sm text-white/70 max-w-xs">
             Windows &amp; doors, replaced and repaired, in {site.serviceCounty}. Licensed,
             insured, and based in {site.baseTown}.
           </p>
         </div>
 
         <div>
-          <h3 className="font-mono text-xs tracking-[0.2em] uppercase text-gold mb-4">
+          <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-gold mb-4">
             Services
           </h3>
-          <ul className="space-y-2 text-sm text-quartz/80">
+          <ul className="space-y-2 text-sm text-white/80">
             <li><Link href="/windows/replacement" className="hover:text-gold">Window Replacement</Link></li>
             <li><Link href="/windows/repair" className="hover:text-gold">Window Repair</Link></li>
             <li><Link href="/doors/replacement" className="hover:text-gold">Door Replacement</Link></li>
@@ -29,10 +29,10 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-mono text-xs tracking-[0.2em] uppercase text-gold mb-4">
+          <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-gold mb-4">
             Service Area
           </h3>
-          <ul className="space-y-2 text-sm text-quartz/80">
+          <ul className="space-y-2 text-sm text-white/80">
             {coreTowns.map((t) => (
               <li key={t.slug}>
                 <Link href={`/service-area/${t.slug}`} className="hover:text-gold">
@@ -44,25 +44,25 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-mono text-xs tracking-[0.2em] uppercase text-gold mb-4">
+          <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-gold mb-4">
             Contact
           </h3>
-          <ul className="space-y-2 text-sm text-quartz/80">
-            <li><a href={site.phoneHref} className="hover:text-gold font-mono">{site.phoneDisplay}</a></li>
+          <ul className="space-y-2 text-sm text-white/80">
+            <li><a href={site.phoneHref} className="hover:text-gold font-sans">{site.phoneDisplay}</a></li>
             <li><a href={`mailto:${site.email}`} className="hover:text-gold">{site.email}</a></li>
-            <li className="text-quartz/60">{site.license}</li>
+            <li className="text-white/60">{site.license}</li>
           </ul>
           <Link
             href="/contact"
-            className="inline-block mt-4 border border-gold text-gold px-5 py-2.5 text-xs font-medium tracking-[0.15em] uppercase hover:bg-gold hover:text-graphite transition-colors"
+            className="inline-block mt-4 rounded-full border-2 border-gold text-gold px-5 py-2.5 text-sm font-semibold hover:bg-gold hover:text-ink transition-colors"
           >
             Get a Quote
           </Link>
         </div>
       </div>
 
-      <div className="border-t border-quartz/15">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 py-6 flex flex-col sm:flex-row justify-between gap-3 text-xs text-quartz/50">
+      <div className="border-t border-white/15">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 py-6 flex flex-col sm:flex-row justify-between gap-3 text-xs text-white/50">
           <p>© {new Date().getFullYear()} {site.name}. {site.license}.</p>
           <p>
             Site by{" "}

@@ -46,7 +46,7 @@ export default function WindowRepairPage() {
           <SectionHeading as="h1" className="text-4xl sm:text-5xl">
             Most window problems aren&apos;t window replacements.
           </SectionHeading>
-          <p className="mt-6 text-lg text-graphite/75 max-w-lg">
+          <p className="mt-6 text-lg text-ink/75 max-w-lg">
             Fogged glass, a stuck sash, a draft you can feel with your hand — most of
             what sends people looking for &quot;replacement windows&quot; is
             actually a repair. We tell you which one it is before we quote either.
@@ -58,9 +58,7 @@ export default function WindowRepairPage() {
             </ButtonLink>
           </div>
         </div>
-        <div className="relative p-2">
-          <div className="frame-line absolute inset-0" aria-hidden />
-          <div className="relative aspect-[4/3] overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
               src="/photos/window-blue-shutters-gables.jpg"
               alt="A house exterior with several multi-pane windows"
@@ -69,7 +67,6 @@ export default function WindowRepairPage() {
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
             />
-          </div>
         </div>
       </section>
 
@@ -78,15 +75,15 @@ export default function WindowRepairPage() {
         <SectionHeading as="h2" className="text-2xl sm:text-3xl max-w-2xl">
           If it&apos;s on this list, it&apos;s a repair — not a full replacement.
         </SectionHeading>
-        <div className="mt-10 divide-y divide-mist">
+        <div className="mt-10 divide-y divide-line">
           {repairs.map((r) => (
             <div key={r.name} className="grid sm:grid-cols-[1fr_2fr] gap-3 sm:gap-10 py-6">
               <h3 className="font-display text-lg font-semibold">{r.name}</h3>
-              <p className="text-graphite/70 text-sm">{r.detail}</p>
+              <p className="text-ink/70 text-sm">{r.detail}</p>
             </div>
           ))}
         </div>
-        <p className="mt-8 text-sm text-graphite/60 max-w-2xl">
+        <p className="mt-8 text-sm text-ink/60 max-w-2xl">
           Frame rotted through, or you&apos;re updating several windows at once?{" "}
           <Link href="/windows/replacement" className="text-gold underline underline-offset-4">
             That&apos;s a replacement job
@@ -103,7 +100,7 @@ export default function WindowRepairPage() {
           <SectionHeading as="h2" className="text-2xl sm:text-3xl max-w-md">
             If the window is original to the house, repair is often the better call.
           </SectionHeading>
-          <p className="mt-5 text-graphite/70 max-w-md">
+          <p className="mt-5 text-ink/70 max-w-md">
             Original wood sashes on an older Lancaster County home are frequently
             better built than a big-box replacement unit — the wood is usually
             old-growth and denser than what&apos;s sold today. Where it makes sense,
@@ -117,7 +114,7 @@ export default function WindowRepairPage() {
       </section>
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8 pb-20">
-        <p className="text-xs text-graphite/50">{site.license} · {site.serviceCounty}</p>
+        <p className="text-xs text-ink/50">{site.license} · {site.serviceCounty}</p>
       </div>
     </>
   );

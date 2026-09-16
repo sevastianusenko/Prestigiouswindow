@@ -31,7 +31,7 @@ export default function RepairOrReplacePage() {
         <SectionHeading as="h1" className="text-4xl sm:text-5xl max-w-3xl">
           Repair or replace? Here&apos;s how to tell before you call anyone.
         </SectionHeading>
-        <p className="mt-6 text-lg text-graphite/75 max-w-2xl">
+        <p className="mt-6 text-lg text-ink/75 max-w-2xl">
           Companies that only sell replacement will tell you to replace. Companies
           that only do repair will tell you to repair. We do both, so here&apos;s the
           honest version — figure out which camp you&apos;re in, then go straight to
@@ -39,9 +39,9 @@ export default function RepairOrReplacePage() {
         </p>
       </section>
 
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-2 gap-px bg-mist mb-24">
-        <div id="repair" className="bg-quartz p-8 sm:p-12 scroll-mt-24">
-          <span className="font-mono text-xs tracking-[0.25em] uppercase text-gold">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-2 gap-5 mb-24">
+        <div id="repair" className="rounded-lg border border-line bg-paper p-8 sm:p-12 scroll-mt-24">
+          <span className="font-sans text-xs tracking-[0.25em] uppercase text-gold">
             Lean repair if —
           </span>
           <h2 className="font-display text-2xl sm:text-3xl font-semibold mt-3">
@@ -49,8 +49,8 @@ export default function RepairOrReplacePage() {
           </h2>
           <ul className="mt-6 space-y-3">
             {repairSigns.map((s) => (
-              <li key={s} className="flex gap-3 text-graphite/75 text-sm border-t border-mist pt-3">
-                <span className="text-gold font-mono">—</span>
+              <li key={s} className="flex gap-3 text-ink/75 text-sm border-t border-line pt-3">
+                <span className="text-gold font-sans">—</span>
                 {s}
               </li>
             ))}
@@ -61,8 +61,8 @@ export default function RepairOrReplacePage() {
           </div>
         </div>
 
-        <div id="replace" className="bg-quartz p-8 sm:p-12 scroll-mt-24">
-          <span className="font-mono text-xs tracking-[0.25em] uppercase text-gold">
+        <div id="replace" className="rounded-lg border border-line bg-paper p-8 sm:p-12 scroll-mt-24">
+          <span className="font-sans text-xs tracking-[0.25em] uppercase text-gold">
             Lean replace if —
           </span>
           <h2 className="font-display text-2xl sm:text-3xl font-semibold mt-3">
@@ -70,8 +70,8 @@ export default function RepairOrReplacePage() {
           </h2>
           <ul className="mt-6 space-y-3">
             {replaceSigns.map((s) => (
-              <li key={s} className="flex gap-3 text-graphite/75 text-sm border-t border-mist pt-3">
-                <span className="text-gold font-mono">—</span>
+              <li key={s} className="flex gap-3 text-ink/75 text-sm border-t border-line pt-3">
+                <span className="text-gold font-sans">—</span>
                 {s}
               </li>
             ))}
@@ -90,7 +90,7 @@ export default function RepairOrReplacePage() {
         <SectionHeading as="h2" className="text-2xl sm:text-3xl max-w-xl">
           That&apos;s normal — most people can&apos;t tell from the inside.
         </SectionHeading>
-        <p className="mt-5 text-graphite/70 max-w-2xl">
+        <p className="mt-5 text-ink/70 max-w-2xl">
           Send a couple of photos, or have someone come look. It&apos;s a five-minute
           call for us to make, and it&apos;s free either way — whether that call
           ends in a repair job or a replacement quote.
@@ -98,7 +98,7 @@ export default function RepairOrReplacePage() {
         <ButtonLink href="/contact" className="mt-8">
           Ask Us Directly
         </ButtonLink>
-        <p className="mt-6 text-sm text-graphite/50">
+        <p className="mt-6 text-sm text-ink/50">
           Also worth a look:{" "}
           <Link href="/old-homes" className="text-gold underline underline-offset-4">
             windows &amp; doors on older homes

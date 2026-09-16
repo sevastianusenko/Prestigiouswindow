@@ -39,7 +39,7 @@ export default function DoorReplacementPage() {
           <SectionHeading as="h1" className="text-4xl sm:text-5xl">
             A door that closes the same way in July and January.
           </SectionHeading>
-          <p className="mt-6 text-lg text-graphite/75 max-w-lg">
+          <p className="mt-6 text-lg text-ink/75 max-w-lg">
             Entry, patio, sliding, and storm doors — replaced and hung so the frame
             stays square through a full range of Pennsylvania weather, not just on
             install day.
@@ -51,9 +51,7 @@ export default function DoorReplacementPage() {
             </ButtonLink>
           </div>
         </div>
-        <div className="relative p-2">
-          <div className="frame-line absolute inset-0" aria-hidden />
-          <div className="relative aspect-[4/3] overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
               src="/photos/door-iford-manor.jpg"
               alt="A substantial wood entry door set in a stone surround"
@@ -62,7 +60,6 @@ export default function DoorReplacementPage() {
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
             />
-          </div>
         </div>
       </section>
 
@@ -73,11 +70,11 @@ export default function DoorReplacementPage() {
         <SectionHeading as="h2" className="text-2xl sm:text-3xl max-w-xl">
           Doors, by type
         </SectionHeading>
-        <div className="mt-10 grid sm:grid-cols-2 gap-px bg-mist">
+        <div className="mt-10 grid sm:grid-cols-2 gap-5">
           {doorTypes.map((d) => (
-            <div key={d.name} className="bg-quartz p-6 sm:p-8">
+            <div key={d.name} className="rounded-lg border border-line bg-paper p-6 sm:p-8">
               <h3 className="font-display text-xl font-semibold">{d.name}</h3>
-              <p className="mt-2 text-sm text-graphite/70">{d.detail}</p>
+              <p className="mt-2 text-sm text-ink/70">{d.detail}</p>
             </div>
           ))}
         </div>
@@ -91,7 +88,7 @@ export default function DoorReplacementPage() {
           <SectionHeading as="h2" className="text-2xl sm:text-3xl max-w-md">
             We treat doors as their own trade, not an add-on to a window job.
           </SectionHeading>
-          <p className="mt-5 text-graphite/70 max-w-md">
+          <p className="mt-5 text-ink/70 max-w-md">
             A door gets hung, not just installed — the hinge-side jamb has to sit
             plumb or the door fights you every day after. It&apos;s a smaller job than
             a full window replacement, but getting it wrong is more noticeable, every

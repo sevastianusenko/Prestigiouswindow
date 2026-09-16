@@ -45,8 +45,8 @@ export default async function TownPage(props: PageProps<"/service-area/[town]">)
           <SectionHeading as="h1" className="text-4xl sm:text-5xl">
             Windows &amp; doors in {town.name}, PA
           </SectionHeading>
-          <p className="mt-6 text-lg text-graphite/75 max-w-lg">{town.blurb}</p>
-          <p className="mt-4 text-graphite/60 max-w-lg">
+          <p className="mt-6 text-lg text-ink/75 max-w-lg">{town.blurb}</p>
+          <p className="mt-4 text-ink/60 max-w-lg">
             {town.name} is {town.character}
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
@@ -56,9 +56,7 @@ export default async function TownPage(props: PageProps<"/service-area/[town]">)
             </ButtonLink>
           </div>
         </div>
-        <div className="relative p-2">
-          <div className="frame-line absolute inset-0" aria-hidden />
-          <div className="relative aspect-[4/3] overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
               src={photoByFocus[town.focus]}
               alt={`A home exterior representative of housing in ${town.name}, PA`}
@@ -67,11 +65,10 @@ export default async function TownPage(props: PageProps<"/service-area/[town]">)
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
             />
-          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 sm:px-8 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-mist">
+      <section className="mx-auto max-w-7xl px-5 sm:px-8 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {[
           { label: "Window Replacement", href: "/windows/replacement" },
           { label: "Window Repair", href: "/windows/repair" },
@@ -81,7 +78,7 @@ export default async function TownPage(props: PageProps<"/service-area/[town]">)
           <Link
             key={s.href}
             href={s.href}
-            className="bg-quartz p-6 hover:bg-cream transition-colors font-display text-lg font-semibold"
+            className="rounded-lg border border-line bg-paper p-6 hover:bg-fog transition-colors font-display text-lg font-semibold"
           >
             {s.label} →
           </Link>
@@ -98,7 +95,7 @@ export default async function TownPage(props: PageProps<"/service-area/[town]">)
               ? "Right in our own backyard."
               : `${town.minutesFromBase} minutes from our shop in ${site.baseTown}.`}
           </SectionHeading>
-          <p className="mt-5 text-graphite/70 max-w-md">
+          <p className="mt-5 text-ink/70 max-w-md">
             {site.license} — licensed and insured to work in {town.county}. We
             measure on site before quoting, and the crew that quotes the job is
             usually the crew that shows up to do it.
@@ -112,9 +109,9 @@ export default async function TownPage(props: PageProps<"/service-area/[town]">)
         <SectionHeading as="h2" className="text-xl sm:text-2xl mb-8">
           Also serving
         </SectionHeading>
-        <div className="flex flex-wrap gap-x-8 gap-y-3 font-mono text-sm">
+        <div className="flex flex-wrap gap-x-8 gap-y-3 font-sans text-sm">
           {others.map((t) => (
-            <Link key={t.slug} href={`/service-area/${t.slug}`} className="text-graphite hover:text-gold">
+            <Link key={t.slug} href={`/service-area/${t.slug}`} className="text-ink hover:text-gold">
               {t.name}, PA →
             </Link>
           ))}

@@ -15,18 +15,15 @@ export function FramedPhoto({
   className?: string;
 }) {
   return (
-    <div className={`relative p-2 ${className}`}>
-      <div className="frame-line absolute inset-0" aria-hidden />
-      <div className="relative aspect-[4/5] sm:aspect-[4/3] overflow-hidden">
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          priority={priority}
-          sizes={sizes}
-          className="object-cover"
-        />
-      </div>
+    <div className={`relative aspect-[4/5] sm:aspect-[4/3] overflow-hidden rounded-lg ${className}`}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        priority={priority}
+        sizes={sizes}
+        className="object-cover"
+      />
     </div>
   );
 }

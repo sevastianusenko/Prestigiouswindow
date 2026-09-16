@@ -23,26 +23,24 @@ export function RepairReplaceSplit() {
       <SectionHeading as="h2" className="text-3xl sm:text-4xl max-w-2xl">
         Not sure if it needs fixing or replacing?
       </SectionHeading>
-      <p className="mt-4 max-w-xl text-graphite/70">
+      <p className="mt-4 max-w-xl text-ink/70">
         Most window and door companies only sell replacement — so that&apos;s what
         they&apos;ll recommend, whether or not it&apos;s what you need. We do both, and
         we&apos;ll tell you honestly which one you&apos;re looking at.
       </p>
 
-      <div className="mt-12 grid sm:grid-cols-2 gap-px bg-mist">
+      <div className="mt-12 grid sm:grid-cols-2 gap-6">
         {paths.map((p) => (
           <Link
             key={p.title}
             href={p.href}
-            className="group bg-quartz p-8 sm:p-10 hover:bg-graphite transition-colors duration-300"
+            className="group rounded-lg border border-line bg-paper p-8 sm:p-10 hover:border-gold hover:shadow-lg transition-all duration-300"
           >
-            <span className="font-display text-2xl sm:text-3xl font-semibold text-graphite group-hover:text-gold transition-colors">
+            <span className="font-display text-2xl sm:text-3xl font-bold text-ink group-hover:text-gold transition-colors">
               {p.title}
             </span>
-            <p className="mt-4 text-sm text-graphite/70 group-hover:text-quartz/70 transition-colors">
-              {p.when}
-            </p>
-            <span className="mt-6 inline-block font-mono text-xs tracking-[0.2em] uppercase text-gold">
+            <p className="mt-4 text-sm text-ink/70">{p.when}</p>
+            <span className="mt-6 inline-block text-sm font-semibold text-gold">
               {p.cta} →
             </span>
           </Link>

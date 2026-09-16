@@ -1,26 +1,20 @@
 import type { Metadata } from "next";
-import { Source_Serif_4, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Jost, Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/lib/site";
 
-const sourceSerif = Source_Serif_4({
-  variable: "--font-source-serif",
+const jost = Jost({
+  variable: "--font-jost",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
 });
 
-const plexSans = IBM_Plex_Sans({
-  variable: "--font-plex-sans",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
-
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -35,11 +29,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${sourceSerif.variable} ${plexSans.variable} ${plexMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-quartz text-graphite font-sans">
+    <html lang="en" className={`${jost.variable} ${openSans.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-paper text-ink font-sans">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

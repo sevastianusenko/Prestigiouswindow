@@ -20,16 +20,14 @@ export default function OldHomesPage() {
             Between &quot;restore it&quot; and &quot;replace it,&quot; there&apos;s a
             gap. We work in it.
           </SectionHeading>
-          <p className="mt-6 text-lg text-graphite/75 max-w-lg">
+          <p className="mt-6 text-lg text-ink/75 max-w-lg">
             Restoration specialists won&apos;t touch a full replacement. Replacement
             companies quote every old house like new construction. On an older
             Lancaster County home, the right answer is usually neither extreme — and
             depends on the specific window or door in front of us.
           </p>
         </div>
-        <div className="relative p-2">
-          <div className="frame-line absolute inset-0" aria-hidden />
-          <div className="relative aspect-[4/3] overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
               src="/photos/house-jasper-st.jpg"
               alt="A historic house with original-proportion windows"
@@ -38,7 +36,6 @@ export default function OldHomesPage() {
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
             />
-          </div>
         </div>
       </section>
 
@@ -47,25 +44,25 @@ export default function OldHomesPage() {
         <SectionHeading as="h2" className="text-2xl sm:text-3xl max-w-2xl">
           Three questions before we recommend anything
         </SectionHeading>
-        <div className="mt-10 grid sm:grid-cols-3 gap-px bg-mist">
-          <div className="bg-quartz p-7">
+        <div className="mt-10 grid sm:grid-cols-3 gap-5">
+          <div className="rounded-lg border border-line bg-paper p-7">
             <h3 className="font-display text-lg font-semibold">Is the opening original?</h3>
-            <p className="mt-2 text-sm text-graphite/70">
+            <p className="mt-2 text-sm text-ink/70">
               If it is, we measure it and try to match it — resizing a 100-year-old
               opening to fit a standard unit changes the whole facade.
             </p>
           </div>
-          <div className="bg-quartz p-7">
+          <div className="rounded-lg border border-line bg-paper p-7">
             <h3 className="font-display text-lg font-semibold">Is the wood actually bad?</h3>
-            <p className="mt-2 text-sm text-graphite/70">
+            <p className="mt-2 text-sm text-ink/70">
               Old-growth wood sashes often outlast their glazing and hardware by
               decades. Rotted glazing putty isn&apos;t the same problem as rotted
               wood.
             </p>
           </div>
-          <div className="bg-quartz p-7">
+          <div className="rounded-lg border border-line bg-paper p-7">
             <h3 className="font-display text-lg font-semibold">What does the house need?</h3>
-            <p className="mt-2 text-sm text-graphite/70">
+            <p className="mt-2 text-sm text-ink/70">
               A historic-district street front and a back-of-house utility window
               don&apos;t need the same answer, even on the same building.
             </p>
@@ -81,7 +78,7 @@ export default function OldHomesPage() {
           <SectionHeading as="h2" className="text-2xl sm:text-3xl max-w-md">
             Repair the sash, replace the storm, leave the frame alone.
           </SectionHeading>
-          <p className="mt-5 text-graphite/70 max-w-md">
+          <p className="mt-5 text-ink/70 max-w-md">
             That&apos;s a common outcome on a pre-1950s Lancaster County home — the
             original window gets re-glazed and weatherstripped, a proper storm window
             goes in front of it for the energy performance, and the exterior

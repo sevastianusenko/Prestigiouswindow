@@ -7,9 +7,9 @@ export function Logo({
   className?: string;
   tone?: "gold" | "light";
 }) {
-  const wordColor = tone === "gold" ? `url(#${uid}-gold)` : "var(--color-quartz)";
-  const roofColor = tone === "gold" ? `url(#${uid}-silver)` : "var(--color-quartz)";
-  const subColor = tone === "gold" ? "var(--color-graphite)" : "var(--color-quartz)";
+  const wordColor = tone === "gold" ? `url(#${uid}-gold)` : "var(--color-paper)";
+  const roofColor = tone === "gold" ? `url(#${uid}-silver)` : "var(--color-paper)";
+  const subColor = tone === "gold" ? "var(--color-ink)" : "var(--color-paper)";
 
   return (
     <svg
@@ -51,9 +51,9 @@ export function Logo({
         x="170"
         y="66"
         textAnchor="middle"
-        fontFamily="var(--font-display, serif)"
+        fontFamily="var(--font-display, sans-serif)"
         fontSize="30"
-        fontWeight="600"
+        fontWeight="700"
         letterSpacing="4"
         fill={wordColor}
       >

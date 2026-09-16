@@ -25,7 +25,7 @@ export default function AboutPage() {
           <SectionHeading as="h1" className="text-4xl sm:text-5xl">
             We&apos;re new here. The standard isn&apos;t.
           </SectionHeading>
-          <p className="mt-6 text-lg text-graphite/75 max-w-lg">
+          <p className="mt-6 text-lg text-ink/75 max-w-lg">
             Prestigious Home Improvements is a new company name in {site.serviceCounty}
             — but the work behind it isn&apos;t a first attempt. We&apos;re licensed,
             insured, and we measure every job on site before we quote it. No
@@ -33,9 +33,7 @@ export default function AboutPage() {
             up for the homepage — just what we can actually stand behind.
           </p>
         </div>
-        <div className="relative p-2">
-          <div className="frame-line absolute inset-0" aria-hidden />
-          <div className="relative aspect-[4/3] overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
               src="/photos/wood-texture-2.jpg"
               alt="Close detail of natural wood grain and joinery"
@@ -44,18 +42,17 @@ export default function AboutPage() {
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
             />
-          </div>
         </div>
       </section>
 
-      <section className="bg-graphite text-quartz py-16">
+      <section className="bg-ink text-white py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {facts.map((f) => (
             <div key={f.k}>
-              <div className="font-mono text-[11px] tracking-[0.2em] uppercase text-gold">
+              <div className="font-sans text-[11px] tracking-[0.2em] uppercase text-gold">
                 {f.k}
               </div>
-              <div className="mt-1.5 text-sm text-quartz/85">{f.v}</div>
+              <div className="mt-1.5 text-sm text-white/85">{f.v}</div>
             </div>
           ))}
         </div>
@@ -67,29 +64,29 @@ export default function AboutPage() {
           Three things we won&apos;t do
         </SectionHeading>
         <div className="mt-10 space-y-8">
-          <div className="border-t border-mist pt-6">
+          <div className="border-t border-line pt-6">
             <h3 className="font-display text-lg font-semibold">
               Quote replacement when it&apos;s actually a repair
             </h3>
-            <p className="mt-2 text-graphite/70 text-sm max-w-xl">
+            <p className="mt-2 text-ink/70 text-sm max-w-xl">
               We do both, so there&apos;s no reason to push the more expensive job
               when the cheaper one solves it.
             </p>
           </div>
-          <div className="border-t border-mist pt-6">
+          <div className="border-t border-line pt-6">
             <h3 className="font-display text-lg font-semibold">
               Price over the phone without seeing the opening
             </h3>
-            <p className="mt-2 text-graphite/70 text-sm max-w-xl">
+            <p className="mt-2 text-ink/70 text-sm max-w-xl">
               A number without a measurement is a guess. We&apos;d rather give you a
               real one.
             </p>
           </div>
-          <div className="border-t border-mist pt-6 border-b pb-6">
+          <div className="border-t border-line pt-6 border-b pb-6">
             <h3 className="font-display text-lg font-semibold">
               Use &quot;today-only&quot; pricing to rush a decision
             </h3>
-            <p className="mt-2 text-graphite/70 text-sm max-w-xl">
+            <p className="mt-2 text-ink/70 text-sm max-w-xl">
               A written quote from us is good for 30 days. Take the time you need.
             </p>
           </div>
