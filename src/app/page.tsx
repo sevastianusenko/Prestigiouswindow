@@ -7,12 +7,7 @@ import {
   WindowIcon,
   DoorIcon,
   QuoteIcon,
-  DraftIcon,
-  FogIcon,
-  BillIcon,
   StuckIcon,
-  RotIcon,
-  NoiseIcon,
   CrewIcon,
   DetailIcon,
   RepeatIcon,
@@ -46,19 +41,26 @@ const stages = [
   },
 ];
 
-const signs = [
+type Sign = {
+  img?: string;
+  icon?: typeof StuckIcon;
+  title: string;
+  body: string;
+};
+
+const signs: Sign[] = [
   {
-    icon: DraftIcon,
+    img: "/icons/sign-draft.png",
     title: "Drafts you can feel",
     body: "Cold air near a closed window or door, even with the heat running.",
   },
   {
-    icon: FogIcon,
+    img: "/icons/sign-fog.png",
     title: "Fogged or cloudy glass",
     body: "Moisture trapped between the panes means the seal has failed for good.",
   },
   {
-    icon: BillIcon,
+    img: "/icons/sign-bill.png",
     title: "Rising energy bills",
     body: "If nothing else in the house changed but the bill went up, this is often why.",
   },
@@ -68,12 +70,12 @@ const signs = [
     body: "A warped frame, a stuck sash, or a door that needs a shoulder to shut.",
   },
   {
-    icon: RotIcon,
+    img: "/icons/sign-rot.png",
     title: "Visible rot or damage",
     body: "Soft wood, cracked frames, or water stains around the opening.",
   },
   {
-    icon: NoiseIcon,
+    img: "/icons/sign-noise.png",
     title: "Outside noise gets through",
     body: "Old glass and worn seals let in more sound than a newer unit would.",
   },
@@ -279,10 +281,16 @@ export default function Home() {
             <div className="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-8">
               {signs.map((s) => (
                 <div key={s.title} className="border-t border-line pt-5">
-                  <div className="-ml-2 scale-75 origin-left">
-                    <s.icon />
+                  <div className="-ml-1 h-16 flex items-center">
+                    {s.img ? (
+                      <Image src={s.img} alt="" width={72} height={72} className="h-16 w-16 object-contain" />
+                    ) : s.icon ? (
+                      <div className="scale-100 origin-left">
+                        <s.icon />
+                      </div>
+                    ) : null}
                   </div>
-                  <h3 className="-mt-2 font-display font-bold text-lg text-ink">{s.title}</h3>
+                  <h3 className="mt-2 font-display font-bold text-lg text-ink">{s.title}</h3>
                   <p className="mt-2 text-sm text-ink/70">{s.body}</p>
                 </div>
               ))}
