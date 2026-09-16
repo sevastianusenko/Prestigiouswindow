@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Eyebrow, SectionHeading, Divider } from "@/components/ui/Type";
 import { ButtonLink } from "@/components/ui/Button";
-import { RepairReplaceSplit } from "@/components/RepairReplaceSplit";
 import { QuoteForm } from "@/components/QuoteForm";
 import {
   WindowIcon,
@@ -158,8 +157,8 @@ export default function Home() {
       <section className="relative isolate">
         <div className="relative h-[520px] sm:h-[600px] overflow-hidden">
           <Image
-            src="/photos/hero-townhouse.jpg"
-            alt="A well-kept brick home with dark-trimmed double-hung windows and a paneled entry door"
+            src="/photos/hero-farmhouse-autumn.webp"
+            alt="A two-story home with dormer windows, dark shutters, and a covered porch decorated for fall"
             fill
             priority
             sizes="100vw"
@@ -291,8 +290,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <RepairReplaceSplit />
 
       {/* HOW WE QUOTE */}
       <section className="bg-fog py-20 sm:py-28">

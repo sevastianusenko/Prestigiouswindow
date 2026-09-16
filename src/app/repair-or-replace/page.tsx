@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Eyebrow, SectionHeading, Divider } from "@/components/ui/Type";
 import { ButtonLink } from "@/components/ui/Button";
@@ -40,45 +41,67 @@ export default function RepairOrReplacePage() {
       </section>
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-2 gap-5 mb-24">
-        <div id="repair" className="rounded-lg border border-line bg-paper p-8 sm:p-12 scroll-mt-24">
-          <span className="font-sans text-xs tracking-[0.25em] uppercase text-gold">
-            Lean repair if —
-          </span>
-          <h2 className="font-display text-2xl sm:text-3xl font-semibold mt-3">
-            The bones are good
-          </h2>
-          <ul className="mt-6 space-y-3">
-            {repairSigns.map((s) => (
-              <li key={s} className="flex gap-3 text-ink/75 text-sm border-t border-line pt-3">
-                <span className="text-gold font-sans">—</span>
-                {s}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink href="/windows/repair" className="text-xs">Window Repair</ButtonLink>
-            <ButtonLink href="/doors/repair" variant="ghost-dark" className="text-xs">Door Repair</ButtonLink>
+        <div id="repair" className="rounded-lg border border-line bg-paper overflow-hidden scroll-mt-24">
+          <div className="relative aspect-[16/9] overflow-hidden">
+            <Image
+              src="/photos/window-porch-rockers.webp"
+              alt="Double-hung windows along a covered porch with rocking chairs"
+              fill
+              sizes="(min-width: 1024px) 46vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="p-8 sm:p-12">
+            <span className="font-sans text-xs tracking-[0.25em] uppercase text-gold">
+              Lean repair if
+            </span>
+            <h2 className="font-display text-2xl sm:text-3xl font-semibold mt-3">
+              The bones are good
+            </h2>
+            <ul className="mt-6 space-y-3">
+              {repairSigns.map((s) => (
+                <li key={s} className="flex gap-3 text-ink/75 text-sm border-t border-line pt-3">
+                  <span className="text-gold font-sans">–</span>
+                  {s}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <ButtonLink href="/windows/repair" className="text-xs">Window Repair</ButtonLink>
+              <ButtonLink href="/doors/repair" variant="ghost-dark" className="text-xs">Door Repair</ButtonLink>
+            </div>
           </div>
         </div>
 
-        <div id="replace" className="rounded-lg border border-line bg-paper p-8 sm:p-12 scroll-mt-24">
-          <span className="font-sans text-xs tracking-[0.25em] uppercase text-gold">
-            Lean replace if —
-          </span>
-          <h2 className="font-display text-2xl sm:text-3xl font-semibold mt-3">
-            The unit has failed
-          </h2>
-          <ul className="mt-6 space-y-3">
-            {replaceSigns.map((s) => (
-              <li key={s} className="flex gap-3 text-ink/75 text-sm border-t border-line pt-3">
-                <span className="text-gold font-sans">—</span>
-                {s}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink href="/windows/replacement" className="text-xs">Window Replacement</ButtonLink>
-            <ButtonLink href="/doors/replacement" variant="ghost-dark" className="text-xs">Door Replacement</ButtonLink>
+        <div id="replace" className="rounded-lg border border-line bg-paper overflow-hidden scroll-mt-24">
+          <div className="relative aspect-[16/9] overflow-hidden">
+            <Image
+              src="/photos/house-multi-gable-blue.jpg"
+              alt="A house exterior with multiple gabled dormers and many double-hung windows"
+              fill
+              sizes="(min-width: 1024px) 46vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="p-8 sm:p-12">
+            <span className="font-sans text-xs tracking-[0.25em] uppercase text-gold">
+              Lean replace if
+            </span>
+            <h2 className="font-display text-2xl sm:text-3xl font-semibold mt-3">
+              The unit has failed
+            </h2>
+            <ul className="mt-6 space-y-3">
+              {replaceSigns.map((s) => (
+                <li key={s} className="flex gap-3 text-ink/75 text-sm border-t border-line pt-3">
+                  <span className="text-gold font-sans">–</span>
+                  {s}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <ButtonLink href="/windows/replacement" className="text-xs">Window Replacement</ButtonLink>
+              <ButtonLink href="/doors/replacement" variant="ghost-dark" className="text-xs">Door Replacement</ButtonLink>
+            </div>
           </div>
         </div>
       </div>
