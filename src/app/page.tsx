@@ -37,8 +37,8 @@ const products = [
     label: "Doors first — shorter cycle, less contested market",
     title: "Doors",
     body: "A door gets used more than almost anything else in a house — opened, slammed, leaned on, left in the sun. Entry, patio, sliding, and storm doors, fitted so they still close right in five years.",
-    image: "/photos/door-waverly.jpg",
-    alt: "A paneled wood entry door with transom window and iron railings",
+    image: "/photos/door-glass-decorative.jpg",
+    alt: "A white entry door with a decorative glass panel, installed and trimmed",
     links: [
       { label: "Replacement", href: "/doors/replacement" },
       { label: "Repair", href: "/doors/repair" },
@@ -48,8 +48,8 @@ const products = [
     label: "Full replacement, or a targeted fix",
     title: "Windows",
     body: "Full replacement when the frame has failed, targeted repair when it hasn't — fogged glass, broken seals, sashes that won't balance. On older homes, we work with the original opening.",
-    image: "/photos/window-green-shutters.jpg",
-    alt: "A house exterior with multi-pane double-hung windows and painted shutters",
+    image: "/photos/window-tree-reflection.jpg",
+    alt: "A double-hung window, glass clear and freshly sealed",
     links: [
       { label: "Replacement", href: "/windows/replacement" },
       { label: "Repair", href: "/windows/repair" },
@@ -64,8 +64,8 @@ export default function Home() {
       <section className="relative isolate">
         <div className="relative h-[520px] sm:h-[600px] overflow-hidden">
           <Image
-            src="/photos/hero-townhouse.jpg"
-            alt="A well-kept brick home with dark-trimmed double-hung windows and a paneled entry door"
+            src="/photos/hero-finished-exterior.jpg"
+            alt="A finished home exterior with black-framed glass door and windows"
             fill
             priority
             sizes="100vw"
@@ -155,8 +155,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
-              src="/photos/wood-texture-2.jpg"
-              alt="Close detail of natural wood grain"
+              src="/photos/detail-door-hinge.jpg"
+              alt="Close detail of a door hinge, set square and shimmed during installation"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
@@ -232,8 +232,8 @@ export default function Home() {
       <section className="relative isolate my-20 sm:my-28">
         <div className="relative h-[480px] sm:h-[560px] overflow-hidden">
           <Image
-            src="/photos/house-jasper-st.jpg"
-            alt="A period American home with original window proportions intact"
+            src="/photos/door-porch-white.jpg"
+            alt="A white entry door on a covered porch"
             fill
             sizes="100vw"
             className="object-cover"

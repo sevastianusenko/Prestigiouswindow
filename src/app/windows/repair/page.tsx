@@ -60,8 +60,8 @@ export default function WindowRepairPage() {
         </div>
         <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
-              src="/photos/window-blue-shutters-gables.jpg"
-              alt="A house exterior with several multi-pane windows"
+              src="/photos/window-porch-pgt.jpg"
+              alt="A double-hung window with tropical landscaping visible through clear glass"
               fill
               priority
               sizes="(min-width: 1024px) 50vw, 100vw"

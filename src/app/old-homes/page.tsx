@@ -29,8 +29,8 @@ export default function OldHomesPage() {
         </div>
         <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
-              src="/photos/house-jasper-st.jpg"
-              alt="A historic house with original-proportion windows"
+              src="/photos/window-arched-shutters.jpg"
+              alt="Arched windows with plantation shutters on an established home"
               fill
               priority
               sizes="(min-width: 1024px) 50vw, 100vw"

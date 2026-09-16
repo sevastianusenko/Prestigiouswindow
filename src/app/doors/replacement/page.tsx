@@ -53,8 +53,8 @@ export default function DoorReplacementPage() {
         </div>
         <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
-              src="/photos/door-iford-manor.jpg"
-              alt="A substantial wood entry door set in a stone surround"
+              src="/photos/door-slider-white-patio.jpg"
+              alt="A white multi-panel sliding patio door opening onto a brick patio"
               fill
               priority
               sizes="(min-width: 1024px) 50vw, 100vw"

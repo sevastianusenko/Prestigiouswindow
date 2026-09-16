@@ -9,9 +9,9 @@ import { coreTowns, getTown } from "@/lib/towns";
 import { site } from "@/lib/site";
 
 const photoByFocus = {
-  windows: "/photos/window-green-shutters.jpg",
-  doors: "/photos/door-iford-manor.jpg",
-  both: "/photos/house-knight-wood.jpg",
+  windows: "/photos/window-double-hung.jpg",
+  doors: "/photos/door-slider-black-frame.jpg",
+  both: "/photos/hero-finished-exterior.jpg",
 } as const;
 
 export function generateStaticParams() {
@@ -59,7 +59,7 @@ export default async function TownPage(props: PageProps<"/service-area/[town]">)
         <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
               src={photoByFocus[town.focus]}
-              alt={`A home exterior representative of housing in ${town.name}, PA`}
+              alt="Recent window and door installation work by Prestigious Home Improvements"
               fill
               priority
               sizes="(min-width: 1024px) 50vw, 100vw"

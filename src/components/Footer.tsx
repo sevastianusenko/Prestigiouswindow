@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="bg-ink text-white mt-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Logo tone="light" className="h-14 w-auto" />
+          <Logo className="h-14" />
           <p className="mt-4 text-sm text-white/70 max-w-xs">
             Windows &amp; doors, replaced and repaired, in {site.serviceCounty}. Licensed,
             insured, and based in {site.baseTown}.

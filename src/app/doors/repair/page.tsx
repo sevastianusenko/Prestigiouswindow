@@ -57,8 +57,8 @@ export default function DoorRepairPage() {
         </div>
         <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
-              src="/photos/door-waverly.jpg"
-              alt="A paneled wood entry door with transom window and iron railings"
+              src="/photos/door-black-hardware.jpg"
+              alt="A door with black lever hardware, set in a stucco wall"
               fill
               priority
               sizes="(min-width: 1024px) 50vw, 100vw"

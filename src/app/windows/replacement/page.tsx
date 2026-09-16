@@ -64,8 +64,8 @@ export default function WindowReplacementPage() {
         </div>
         <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
-              src="/photos/window-modern-house-1.jpg"
-              alt="A house exterior with large modern replacement windows"
+              src="/photos/window-double-hung.jpg"
+              alt="A newly installed double-hung window, trimmed and caulked"
               fill
               priority
               sizes="(min-width: 1024px) 50vw, 100vw"

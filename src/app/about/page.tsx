@@ -35,8 +35,8 @@ export default function AboutPage() {
         </div>
         <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
-              src="/photos/wood-texture-2.jpg"
-              alt="Close detail of natural wood grain and joinery"
+              src="/photos/process-rough-opening.jpg"
+              alt="A rough opening squared and leveled mid-construction, ready for a window or door"
               fill
               priority
               sizes="(min-width: 1024px) 50vw, 100vw"
