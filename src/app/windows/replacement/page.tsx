@@ -5,6 +5,7 @@ import { Eyebrow, SectionHeading, Divider } from "@/components/ui/Type";
 import { ButtonLink } from "@/components/ui/Button";
 import { QuoteForm } from "@/components/QuoteForm";
 import { TrustBar } from "@/components/TrustBar";
+import { WindowIcon, CasementIcon, BayIcon, EgressIcon } from "@/components/Icons";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -15,18 +16,22 @@ export const metadata: Metadata = {
 
 const options = [
   {
+    icon: WindowIcon,
     name: "Double-hung",
     detail: "The default for most homes — both sashes move, tilts in for cleaning from inside.",
   },
   {
+    icon: CasementIcon,
     name: "Casement",
     detail: "Crank-out, seals tighter than double-hung when closed. Good over sinks and counters.",
   },
   {
+    icon: BayIcon,
     name: "Bay & bow",
     detail: "Multi-panel projection — adds floor space and light. More structural planning up front.",
   },
   {
+    icon: EgressIcon,
     name: "Egress",
     detail: "Code-sized for basement bedrooms. We check the opening against code before quoting, not after.",
   },
@@ -163,7 +168,10 @@ export default function WindowReplacementPage() {
         <div className="mt-10 grid sm:grid-cols-2 gap-5">
           {options.map((o) => (
             <div key={o.name} className="rounded-lg border border-line bg-paper p-6 sm:p-8">
-              <h3 className="font-display text-xl font-semibold">{o.name}</h3>
+              <div className="-ml-2 scale-75 origin-left">
+                <o.icon />
+              </div>
+              <h3 className="-mt-2 font-display text-xl font-semibold">{o.name}</h3>
               <p className="mt-2 text-sm text-ink/70">{o.detail}</p>
             </div>
           ))}

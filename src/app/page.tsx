@@ -4,7 +4,22 @@ import { Eyebrow, SectionHeading, Divider } from "@/components/ui/Type";
 import { ButtonLink } from "@/components/ui/Button";
 import { RepairReplaceSplit } from "@/components/RepairReplaceSplit";
 import { QuoteForm } from "@/components/QuoteForm";
-import { WindowIcon, DoorIcon, QuoteIcon } from "@/components/StageIcons";
+import {
+  WindowIcon,
+  DoorIcon,
+  QuoteIcon,
+  DraftIcon,
+  FogIcon,
+  BillIcon,
+  StuckIcon,
+  RotIcon,
+  NoiseIcon,
+  CrewIcon,
+  DetailIcon,
+  RepeatIcon,
+  StarIcon,
+} from "@/components/Icons";
+import { BrandMark } from "@/components/BrandMark";
 import { coreTowns } from "@/lib/towns";
 import { site } from "@/lib/site";
 
@@ -34,26 +49,32 @@ const stages = [
 
 const signs = [
   {
+    icon: DraftIcon,
     title: "Drafts you can feel",
     body: "Cold air near a closed window or door, even with the heat running.",
   },
   {
+    icon: FogIcon,
     title: "Fogged or cloudy glass",
     body: "Moisture trapped between the panes means the seal has failed for good.",
   },
   {
+    icon: BillIcon,
     title: "Rising energy bills",
     body: "If nothing else in the house changed but the bill went up, this is often why.",
   },
   {
+    icon: StuckIcon,
     title: "Hard to open or close",
     body: "A warped frame, a stuck sash, or a door that needs a shoulder to shut.",
   },
   {
+    icon: RotIcon,
     title: "Visible rot or damage",
     body: "Soft wood, cracked frames, or water stains around the opening.",
   },
   {
+    icon: NoiseIcon,
     title: "Outside noise gets through",
     body: "Old glass and worn seals let in more sound than a newer unit would.",
   },
@@ -61,18 +82,22 @@ const signs = [
 
 const reasons = [
   {
+    icon: CrewIcon,
     title: "Real crew, not subcontractors",
     body: "Reviews name our actual installers because they're the same people who show up every time, not a rotating cast of subs.",
   },
   {
+    icon: DetailIcon,
     title: "The kind of detail people notice",
     body: "Customers bring up things like clean caulk lines without being asked. That's not an accident, it's the standard.",
   },
   {
+    icon: RepeatIcon,
     title: "People call us back",
     body: "More than one customer has hired us twice, once for windows and doors, later for something else entirely.",
   },
   {
+    icon: StarIcon,
     title: "Five stars, unedited",
     body: "Every review on our Google profile is five stars. We don't write them and we don't hide the bad ones, because there aren't any yet.",
   },
@@ -177,6 +202,7 @@ export default function Home() {
       {/* STAGE PICKER — icon + heading + body + pill link, 3 columns */}
       <section className="bg-fog py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <BrandMark className="h-6 w-auto mx-auto mb-6" />
           <h2 className="font-display font-bold text-2xl sm:text-3xl text-center text-ink">
             Where are you in your project?
           </h2>
@@ -251,10 +277,13 @@ export default function Home() {
               at once, on the same window or door, usually means it&apos;s
               time to replace it.
             </p>
-            <div className="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-6">
+            <div className="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-8">
               {signs.map((s) => (
                 <div key={s.title} className="border-t border-line pt-5">
-                  <h3 className="font-display font-bold text-lg text-ink">{s.title}</h3>
+                  <div className="-ml-2 scale-75 origin-left">
+                    <s.icon />
+                  </div>
+                  <h3 className="-mt-2 font-display font-bold text-lg text-ink">{s.title}</h3>
                   <p className="mt-2 text-sm text-ink/70">{s.body}</p>
                 </div>
               ))}
@@ -312,14 +341,18 @@ export default function Home() {
 
       {/* WHY CHOOSE US */}
       <section className="mx-auto max-w-7xl px-5 sm:px-8 py-20 sm:py-28">
+        <BrandMark className="h-6 w-auto mb-6" />
         <Eyebrow>Why choose us</Eyebrow>
         <SectionHeading as="h2" className="text-3xl sm:text-4xl max-w-2xl">
           What our customers actually notice
         </SectionHeading>
-        <div className="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-10">
+        <div className="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-8">
           {reasons.map((r) => (
             <div key={r.title} className="border-t border-line pt-5">
-              <h3 className="font-display font-bold text-lg text-ink">{r.title}</h3>
+              <div className="-ml-2 scale-75 origin-left">
+                <r.icon />
+              </div>
+              <h3 className="-mt-2 font-display font-bold text-lg text-ink">{r.title}</h3>
               <p className="mt-2 text-sm text-ink/70">{r.body}</p>
             </div>
           ))}

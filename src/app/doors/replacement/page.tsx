@@ -4,6 +4,7 @@ import { Eyebrow, SectionHeading, Divider } from "@/components/ui/Type";
 import { ButtonLink } from "@/components/ui/Button";
 import { QuoteForm } from "@/components/QuoteForm";
 import { TrustBar } from "@/components/TrustBar";
+import { DoorIcon, PatioSliderIcon, FrenchDoorIcon, StormDoorIcon } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Door Replacement",
@@ -13,18 +14,22 @@ export const metadata: Metadata = {
 
 const doorTypes = [
   {
+    icon: DoorIcon,
     name: "Entry doors",
     detail: "Fiberglass, steel, or wood — the door that gets used, and judged, the most.",
   },
   {
+    icon: PatioSliderIcon,
     name: "Patio & sliding doors",
     detail: "Full-panel replacement, track and frame included — not just the glass.",
   },
   {
+    icon: FrenchDoorIcon,
     name: "French doors",
     detail: "Paired doors, hung to close flush against each other without a gap or a fight.",
   },
   {
+    icon: StormDoorIcon,
     name: "Storm doors",
     detail: "Added protection and ventilation ahead of an entry door — sized to match, not generic.",
   },
@@ -73,7 +78,10 @@ export default function DoorReplacementPage() {
         <div className="mt-10 grid sm:grid-cols-2 gap-5">
           {doorTypes.map((d) => (
             <div key={d.name} className="rounded-lg border border-line bg-paper p-6 sm:p-8">
-              <h3 className="font-display text-xl font-semibold">{d.name}</h3>
+              <div className="-ml-2 scale-75 origin-left">
+                <d.icon />
+              </div>
+              <h3 className="-mt-2 font-display text-xl font-semibold">{d.name}</h3>
               <p className="mt-2 text-sm text-ink/70">{d.detail}</p>
             </div>
           ))}
