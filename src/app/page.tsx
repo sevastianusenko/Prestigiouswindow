@@ -421,8 +421,8 @@ export default function Home() {
       <section className="relative isolate my-20 sm:my-28">
         <div className="relative h-[480px] sm:h-[560px] overflow-hidden">
           <Image
-            src="/photos/house-jasper-st.jpg"
-            alt="A period American home with original window proportions intact"
+            src="/photos/door-glass-sidelights.webp"
+            alt="A traditional entry door with decorative glass and matching sidelights"
             fill
             sizes="100vw"
             className="object-cover"

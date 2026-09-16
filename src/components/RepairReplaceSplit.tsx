@@ -8,16 +8,16 @@ const paths = [
     href: "/repair-or-replace#repair",
     when: "The frame is sound, the glass is intact, and something specific has gone wrong. A fogged pane, a sagging hinge, a sash that won't stay up.",
     cta: "See what's repairable",
-    image: "/photos/wood-texture-1.jpg",
-    alt: "Close detail of natural wood grain",
+    image: "/photos/window-porch-rockers.webp",
+    alt: "Double-hung windows along a covered porch with rocking chairs",
   },
   {
     title: "Replace it",
     href: "/repair-or-replace#replace",
     when: "The frame itself has failed, the energy loss is chronic, or you're updating multiple windows or a door at once.",
     cta: "See replacement options",
-    image: "/photos/window-modern-house-1.jpg",
-    alt: "A house exterior with large modern replacement windows",
+    image: "/photos/house-multi-gable-blue.jpg",
+    alt: "A house exterior with multiple gabled dormers and many double-hung windows",
   },
 ];
 
