@@ -32,6 +32,33 @@ const stages = [
   },
 ];
 
+const signs = [
+  {
+    title: "Drafts you can feel",
+    body: "Cold air near a closed window or door, even with the heat running.",
+  },
+  {
+    title: "Fogged or cloudy glass",
+    body: "Moisture trapped between the panes means the seal has failed for good.",
+  },
+  {
+    title: "Rising energy bills",
+    body: "If nothing else in the house changed but the bill went up, this is often why.",
+  },
+  {
+    title: "Hard to open or close",
+    body: "A warped frame, a stuck sash, or a door that needs a shoulder to shut.",
+  },
+  {
+    title: "Visible rot or damage",
+    body: "Soft wood, cracked frames, or water stains around the opening.",
+  },
+  {
+    title: "Outside noise gets through",
+    body: "Old glass and worn seals let in more sound than a newer unit would.",
+  },
+];
+
 const products = [
   {
     label: "Doors first — shorter cycle, less contested market",
@@ -93,6 +120,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* NEUTRAL INTRO — plain text, no image, no hard CTA */}
+      <section className="mx-auto max-w-4xl px-5 sm:px-8 py-16 sm:py-20 text-center">
+        <p className="text-lg sm:text-xl text-ink/80 leading-relaxed">
+          Prestigious Home Improvements installs and repairs windows and
+          doors across {site.serviceCounty}, based in {site.baseTown}. Every
+          job starts with an in-person measurement, not a guess over the
+          phone. Whether it&apos;s one window, a full house, or a single
+          entry door, the crew that measures the job is the crew that
+          installs it.
+        </p>
+      </section>
+
       {/* STAGE PICKER — icon + heading + body + pill link, 3 columns */}
       <section className="bg-fog py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
@@ -145,6 +184,29 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* SIGNS TO REPLACE */}
+      <section className="bg-fog py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <Eyebrow>Why replace</Eyebrow>
+          <SectionHeading as="h2" className="text-3xl sm:text-4xl max-w-2xl">
+            Signs your windows or doors are due for a change
+          </SectionHeading>
+          <p className="mt-4 max-w-xl text-ink/70">
+            One or two of these on their own is usually a repair. Several at
+            once, on the same window or door, usually means it&apos;s time to
+            replace it.
+          </p>
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {signs.map((s) => (
+              <div key={s.title} className="border-t border-line pt-5">
+                <h3 className="font-display font-bold text-lg text-ink">{s.title}</h3>
+                <p className="mt-2 text-sm text-ink/70">{s.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
