@@ -91,8 +91,8 @@ export default function Home() {
       <section className="relative isolate">
         <div className="relative h-[520px] sm:h-[600px] overflow-hidden">
           <Image
-            src="/photos/hero-finished-exterior.jpg"
-            alt="A finished home exterior with black-framed glass door and windows"
+            src="/photos/hero-townhouse.jpg"
+            alt="A well-kept brick home with dark-trimmed double-hung windows and a paneled entry door"
             fill
             priority
             sizes="100vw"
@@ -189,23 +189,34 @@ export default function Home() {
 
       {/* SIGNS TO REPLACE */}
       <section className="bg-fog py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <Eyebrow>Why replace</Eyebrow>
-          <SectionHeading as="h2" className="text-3xl sm:text-4xl max-w-2xl">
-            Signs your windows or doors are due for a change
-          </SectionHeading>
-          <p className="mt-4 max-w-xl text-ink/70">
-            One or two of these on their own is usually a repair. Several at
-            once, on the same window or door, usually means it&apos;s time to
-            replace it.
-          </p>
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {signs.map((s) => (
-              <div key={s.title} className="border-t border-line pt-5">
-                <h3 className="font-display font-bold text-lg text-ink">{s.title}</h3>
-                <p className="mt-2 text-sm text-ink/70">{s.body}</p>
-              </div>
-            ))}
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-16 items-start">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-lg lg:sticky lg:top-24">
+            <Image
+              src="/photos/window-blue-shutters-gables.jpg"
+              alt="A house exterior with several multi-pane windows and painted shutters"
+              fill
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <Eyebrow>Why replace</Eyebrow>
+            <SectionHeading as="h2" className="text-3xl sm:text-4xl max-w-xl">
+              Signs your windows or doors are due for a change
+            </SectionHeading>
+            <p className="mt-4 max-w-xl text-ink/70">
+              One or two of these on their own is usually a repair. Several
+              at once, on the same window or door, usually means it&apos;s
+              time to replace it.
+            </p>
+            <div className="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-6">
+              {signs.map((s) => (
+                <div key={s.title} className="border-t border-line pt-5">
+                  <h3 className="font-display font-bold text-lg text-ink">{s.title}</h3>
+                  <p className="mt-2 text-sm text-ink/70">{s.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -294,8 +305,8 @@ export default function Home() {
       <section className="relative isolate my-20 sm:my-28">
         <div className="relative h-[480px] sm:h-[560px] overflow-hidden">
           <Image
-            src="/photos/door-porch-white.jpg"
-            alt="A white entry door on a covered porch"
+            src="/photos/house-jasper-st.jpg"
+            alt="A period American home with original window proportions intact"
             fill
             sizes="100vw"
             className="object-cover"
