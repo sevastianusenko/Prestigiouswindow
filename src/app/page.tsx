@@ -7,7 +7,6 @@ import {
   WindowIcon,
   DoorIcon,
   QuoteIcon,
-  StuckIcon,
   CrewIcon,
   DetailIcon,
   RepeatIcon,
@@ -41,40 +40,39 @@ const stages = [
 ];
 
 type Sign = {
-  img?: string;
-  icon?: typeof StuckIcon;
+  img: string;
   title: string;
   body: string;
 };
 
 const signs: Sign[] = [
   {
-    img: "/icons/sign-draft.png",
+    img: "/icons/badge-draft.png",
     title: "Drafts you can feel",
     body: "Cold air near a closed window or door, even with the heat running.",
   },
   {
-    img: "/icons/sign-fog.png",
+    img: "/icons/badge-fog.png",
     title: "Fogged or cloudy glass",
     body: "Moisture trapped between the panes means the seal has failed for good.",
   },
   {
-    img: "/icons/sign-bill.png",
+    img: "/icons/badge-bill.png",
     title: "Rising energy bills",
     body: "If nothing else in the house changed but the bill went up, this is often why.",
   },
   {
-    icon: StuckIcon,
+    img: "/icons/badge-stuck.png",
     title: "Hard to open or close",
     body: "A warped frame, a stuck sash, or a door that needs a shoulder to shut.",
   },
   {
-    img: "/icons/sign-rot.png",
+    img: "/icons/badge-rot.png",
     title: "Visible rot or damage",
     body: "Soft wood, cracked frames, or water stains around the opening.",
   },
   {
-    img: "/icons/sign-noise.png",
+    img: "/icons/badge-noise.png",
     title: "Outside noise gets through",
     body: "Old glass and worn seals let in more sound than a newer unit would.",
   },
@@ -296,13 +294,7 @@ export default function Home() {
               {signs.map((s) => (
                 <div key={s.title} className="border-t border-line pt-5">
                   <div className="-ml-1 h-16 flex items-center">
-                    {s.img ? (
-                      <Image src={s.img} alt="" width={72} height={72} className="h-16 w-16 object-contain" />
-                    ) : s.icon ? (
-                      <div className="scale-100 origin-left">
-                        <s.icon />
-                      </div>
-                    ) : null}
+                    <Image src={s.img} alt="" width={72} height={72} className="h-16 w-16 object-contain" />
                   </div>
                   <h3 className="mt-2 font-display font-bold text-lg text-ink">{s.title}</h3>
                   <p className="mt-2 text-sm text-ink/70">{s.body}</p>
