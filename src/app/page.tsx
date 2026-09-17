@@ -14,7 +14,6 @@ import {
   StarIcon,
 } from "@/components/Icons";
 import { BrandMark } from "@/components/BrandMark";
-import { coreTowns } from "@/lib/towns";
 import { site } from "@/lib/site";
 
 const stages = [
@@ -101,6 +100,21 @@ const reasons = [
     icon: StarIcon,
     title: "Five stars, unedited",
     body: "Every review on our Google profile is five stars. We don't write them and we don't hide the bad ones, because there aren't any yet.",
+  },
+];
+
+const counties = [
+  {
+    name: "Lancaster County",
+    towns: ["East Earl", "Blue Ball", "New Holland", "Terre Hill", "Goodville"],
+  },
+  {
+    name: "Berks County",
+    towns: ["Morgantown", "New Morgan", "Geigertown", "Birdsboro", "Douglassville"],
+  },
+  {
+    name: "Chester County",
+    towns: ["Honey Brook", "Elverson", "Parkesburg", "Atglen", "Coatesville"],
   },
 ];
 
@@ -406,16 +420,14 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {coreTowns.map((t) => (
-            <Link
-              key={t.slug}
-              href={`/service-area/${t.slug}`}
-              className="rounded-lg border border-line bg-white p-6 hover:border-gold transition-colors"
-            >
-              <span className="font-display font-bold text-xl">{t.name}, PA</span>
-              <p className="mt-2 text-sm text-ink/60">{t.minutesFromBase} min from East Earl</p>
-            </Link>
+        <div className="grid sm:grid-cols-3 gap-5">
+          {counties.map((c) => (
+            <div key={c.name} className="rounded-lg border border-line bg-white p-6 sm:p-7">
+              <span className="font-display font-bold text-xl text-ink">{c.name}</span>
+              <p className="mt-3 text-xs uppercase tracking-wide text-ink/50">
+                {c.towns.join(" · ")}
+              </p>
+            </div>
           ))}
         </div>
       </section>
