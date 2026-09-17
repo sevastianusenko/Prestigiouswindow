@@ -167,8 +167,8 @@ const products = [
     label: "Full replacement, or a targeted fix",
     title: "Windows",
     body: "Full replacement when the frame has failed, targeted repair when it hasn't — fogged glass, broken seals, sashes that won't balance. On older homes, we work with the original opening.",
-    image: "/photos/window-tree-reflection.jpg",
-    alt: "A double-hung window, glass clear and freshly sealed",
+    image: "/photos/window-porch-rockers.webp",
+    alt: "Double-hung windows along a covered porch with rocking chairs",
     links: [
       { label: "Replacement", href: "/windows/replacement" },
       { label: "Repair", href: "/windows/repair" },
