@@ -285,8 +285,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-16 items-start">
           <div className="relative aspect-[4/5] overflow-hidden rounded-lg lg:sticky lg:top-24">
             <Image
-              src="/photos/window-blue-shutters-gables.jpg"
-              alt="A house exterior with several multi-pane windows and painted shutters"
+              src="/photos/door-slider-white-patio.jpg"
+              alt="A white multi-panel sliding patio door opening onto a brick patio"
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"
               className="object-cover"
