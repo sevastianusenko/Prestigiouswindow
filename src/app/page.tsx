@@ -114,6 +114,18 @@ const counties = [
     name: "Chester County",
     towns: ["Honey Brook", "Elverson", "Parkesburg", "Atglen", "Coatesville"],
   },
+  {
+    name: "Lebanon County",
+    towns: ["Lebanon", "Annville", "Myerstown", "Cornwall", "Jonestown"],
+  },
+  {
+    name: "Dauphin County",
+    towns: ["Harrisburg", "Hershey", "Hummelstown", "Middletown", "Steelton"],
+  },
+  {
+    name: "York County",
+    towns: ["York", "Wrightsville", "Hallam", "Red Lion", "Windsor"],
+  },
 ];
 
 const reviews = [
@@ -397,11 +409,11 @@ export default function Home() {
 
       {/* SERVICE AREA TEASER */}
       <section className="mx-auto max-w-7xl px-5 sm:px-8 py-20 sm:py-28">
-        <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
+        <div className="flex flex-wrap items-end justify-between gap-6 mb-6">
           <div>
             <Eyebrow>Where we work</Eyebrow>
-            <SectionHeading as="h2" className="text-3xl sm:text-4xl">
-              Based in East Earl. Not stretched thin.
+            <SectionHeading as="h2" className="text-3xl sm:text-4xl max-w-2xl">
+              Based in East Earl. County lines don&apos;t stop us.
             </SectionHeading>
           </div>
           <Link
@@ -411,8 +423,14 @@ export default function Home() {
             Full service area →
           </Link>
         </div>
+        <p className="text-ink/70 max-w-2xl mb-12">
+          Lancaster County is home base, but our reach doesn&apos;t stop at the
+          county line. Berks, Chester, Lebanon, Dauphin, and York Counties all
+          meet nearby, and we work into each of them, close enough for the
+          same crew that measures the job to be the one that installs it.
+        </p>
 
-        <div className="grid sm:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {counties.map((c) => (
             <div key={c.name} className="rounded-lg border border-line bg-white p-6 sm:p-7">
               <span className="font-display font-bold text-xl text-ink">{c.name}</span>
