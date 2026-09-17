@@ -322,8 +322,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
-              src="/photos/door-iford-manor.jpg"
-              alt="A paneled door set in a stone archway"
+              src="/photos/van-construction-site.jpg"
+              alt="A Prestigious Home Improvements service van parked at a construction site"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
