@@ -16,41 +16,49 @@ export const metadata: Metadata = {
 
 const repairs = [
   {
+    slug: "fogged-glass",
     name: "Fogged or cloudy glass",
     detail:
       "The seal between the panes has failed and moisture got in — what's called a window seal repair. The haze sits on the inside faces of the glass, which is why it never wipes off. In most modern windows we replace the insulated glass unit inside the existing sash and frame, so the trim, the operation, and the exterior stay exactly as they are.",
   },
   {
+    slug: "cracked-glass",
     name: "Cracked or broken glass",
     detail:
       "A single cracked pane is a glass replacement, custom-cut to your opening, not a reason to replace the frame around it. We match thickness, tint, and any Low-E coating so the repaired opening doesn't read differently from the ones next to it. Tempered glass goes back where code requires it, near doors, tubs, and low sills.",
   },
   {
+    slug: "sash-balance",
     name: "Sash won't stay up, or is painted shut",
     detail:
       "Usually a balance or spring issue, sometimes decades of repainting. Spiral and constant-force balances are stock parts on most vinyl windows; on older wood double-hungs it's a sash cord, a pulley, and a weight still sitting in the wall pocket. Either way it's hardware, not the window.",
   },
   {
+    slug: "weatherstripping",
     name: "Drafts around a window that otherwise looks fine",
     detail:
       "Weatherstripping and glazing compound wear out long before the window does. We check the sash seal, the meeting rail, and the perimeter caulk separately, because all three feel identical to a hand held near the glass and only one of them is usually the actual leak.",
   },
   {
+    slug: "rollers-and-tracks",
     name: "Sliding or double-hung roller and track wear",
     detail:
       "Hardware replacement — a fraction of the cost of a new unit. Rollers flat-spot and tracks pack with grit, and a window that's been forced for a year usually needs the track straightened as well as the roller swapped.",
   },
   {
+    slug: "screens",
     name: "Screen tears or bent frames",
     detail:
       "Rescreened on site or shop-repaired, usually same visit. Standard sizes get new mesh in the existing frame; older or custom openings get a frame built to match, since a hardware-store screen almost never fits a house that predates standard sizing.",
   },
   {
+    slug: "storm-windows",
     name: "Storm windows that won't open, close, or seal",
     detail:
       "Storm windows get painted shut and lose their seals the same way the primary window does — we service them as their own repair, not an afterthought. On older homes a working storm window plus fresh weatherstripping often does more for comfort than replacing the sash behind it.",
   },
   {
+    slug: "gas-fill",
     name: "A window that's lost its gas fill",
     detail:
       "If an insulated unit has lost its argon or krypton fill, that's the same seal failure as fogged glass — it just hasn't fogged yet. It's a glass job, not something that gets \"recharged.\" Nobody can top the gas back up through a sealed unit, and we'll say so rather than sell a service that doesn't hold.",
@@ -187,10 +195,21 @@ export default function WindowRepairPage() {
         </SectionHeading>
         <div className="mt-10 divide-y divide-line">
           {repairs.map((r) => (
-            <div key={r.name} className="grid sm:grid-cols-[1fr_2fr] gap-3 sm:gap-10 py-6">
-              <h3 className="font-display text-lg font-semibold">{r.name}</h3>
-              <p className="text-ink/70 text-sm">{r.detail}</p>
-            </div>
+            <Link
+              key={r.slug}
+              href={`/windows/repair/${r.slug}`}
+              className="group grid sm:grid-cols-[1fr_2fr] gap-3 sm:gap-10 py-6 hover:bg-fog/60 transition-colors"
+            >
+              <h3 className="font-display text-lg font-semibold group-hover:text-gold transition-colors">
+                {r.name}
+              </h3>
+              <div>
+                <p className="text-ink/70 text-sm">{r.detail}</p>
+                <span className="mt-2 inline-block text-sm font-semibold text-gold">
+                  How we fix it →
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
         <p className="mt-8 text-sm text-ink/60 max-w-2xl">

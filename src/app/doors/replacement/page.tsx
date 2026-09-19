@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ComponentType } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Eyebrow, SectionHeading, Divider } from "@/components/ui/Type";
@@ -7,6 +8,7 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { TrustBar } from "@/components/TrustBar";
 import { Faq } from "@/components/ui/Faq";
 import { DoorIcon, PatioSliderIcon, FrenchDoorIcon, StormDoorIcon } from "@/components/Icons";
+import { getCategoriesFor } from "@/lib/services";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -15,28 +17,15 @@ export const metadata: Metadata = {
     "Entry, patio, sliding, French, and storm door replacement in Lancaster County, PA — fiberglass, steel, wood, and vinyl, fitted and hung by a licensed local crew.",
 };
 
-const doorTypes = [
-  {
-    icon: DoorIcon,
-    name: "Entry doors",
-    detail: "Fiberglass, steel, or wood — the door that gets used, and judged, the most.",
-  },
-  {
-    icon: PatioSliderIcon,
-    name: "Patio & sliding doors",
-    detail: "Full-panel replacement, track and frame included — not just the glass.",
-  },
-  {
-    icon: FrenchDoorIcon,
-    name: "French doors",
-    detail: "Paired doors, hung to close flush against each other without a gap or a fight.",
-  },
-  {
-    icon: StormDoorIcon,
-    name: "Storm doors",
-    detail: "Added protection and ventilation ahead of an entry door — sized to match, not generic.",
-  },
-];
+const typeIcons: Record<string, ComponentType> = {
+  "entry-doors": DoorIcon,
+  "patio-doors": PatioSliderIcon,
+  "french-doors": FrenchDoorIcon,
+  "storm-doors": StormDoorIcon,
+};
+
+const doorTypes = getCategoriesFor("doors/replacement", "type");
+const materials = getCategoriesFor("doors/replacement", "material");
 
 const signs = [
   "The door drafts or feels cold to stand near, even with weatherstripping",
@@ -44,29 +33,6 @@ const signs = [
   "Visible rot, warping, or soft wood anywhere in the frame or panel",
   "The frame itself is out of square, not just the door hung wrong",
   "Glass in the door or sidelights is cracked, fogged, or beyond a spot repair",
-];
-
-const materials = [
-  {
-    name: "Fiberglass",
-    detail:
-      "Holds up to weather and temperature swings better than wood, takes paint or a wood-grain finish well, and is the most common entry door material we install today.",
-  },
-  {
-    name: "Steel",
-    detail:
-      "The most affordable option with real security, dents more easily than fiberglass but is straightforward to repaint if it does.",
-  },
-  {
-    name: "Wood",
-    detail:
-      "Still the right call on older or historic homes where the original look matters, at the cost of more regular maintenance than fiberglass or steel.",
-  },
-  {
-    name: "Vinyl-frame sliders",
-    detail:
-      "Standard for patio and sliding doors — low maintenance, good insulation, and the frame material most sliding door hardware is built around.",
-  },
 ];
 
 const methods = [
@@ -203,15 +169,25 @@ export default function DoorReplacementPage() {
           Doors, by type
         </SectionHeading>
         <div className="mt-10 grid sm:grid-cols-2 gap-5">
-          {doorTypes.map((d) => (
-            <div key={d.name} className="rounded-lg border border-line bg-paper p-6 sm:p-8">
-              <div className="-ml-2 scale-75 origin-left">
-                <d.icon />
-              </div>
-              <h3 className="-mt-2 font-display text-xl font-semibold">{d.name}</h3>
-              <p className="mt-2 text-sm text-ink/70">{d.detail}</p>
-            </div>
-          ))}
+          {doorTypes.map((d) => {
+            const Icon = typeIcons[d.slug];
+            return (
+              <Link
+                key={d.slug}
+                href={`/doors/replacement/${d.slug}`}
+                className="lift-on-hover group block rounded-lg border border-line bg-paper p-6 sm:p-8 hover:border-gold"
+              >
+                <div className="-ml-2 scale-75 origin-left">{Icon && <Icon />}</div>
+                <h3 className="-mt-2 font-display text-xl font-semibold group-hover:text-gold transition-colors">
+                  {d.name}
+                </h3>
+                <p className="mt-2 text-sm text-ink/70">{d.cardDetail}</p>
+                <span className="mt-4 inline-block text-sm font-semibold text-gold">
+                  More on {d.name.toLowerCase()} →
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
@@ -256,10 +232,19 @@ export default function DoorReplacementPage() {
         </p>
         <div className="mt-10 grid sm:grid-cols-2 gap-5">
           {materials.map((m) => (
-            <div key={m.name} className="rounded-lg border border-line bg-paper p-6 sm:p-8">
-              <h3 className="font-display text-xl font-semibold">{m.name}</h3>
-              <p className="mt-2 text-sm text-ink/70">{m.detail}</p>
-            </div>
+            <Link
+              key={m.slug}
+              href={`/doors/replacement/${m.slug}`}
+              className="lift-on-hover group block rounded-lg border border-line bg-paper p-6 sm:p-8 hover:border-gold"
+            >
+              <h3 className="font-display text-xl font-semibold group-hover:text-gold transition-colors">
+                {m.name}
+              </h3>
+              <p className="mt-2 text-sm text-ink/70">{m.cardDetail}</p>
+              <span className="mt-4 inline-block text-sm font-semibold text-gold">
+                More on {m.name.toLowerCase()} →
+              </span>
+            </Link>
           ))}
         </div>
       </section>

@@ -16,41 +16,49 @@ export const metadata: Metadata = {
 
 const repairs = [
   {
+    slug: "sticking-doors",
     name: "Door sticks, drags, or won't latch",
     detail:
       "Usually a settled frame or worn hinge, not a reason to replace the whole unit. A door that rubs at the top corner and one that rubs along the latch edge are two different problems with two different fixes, which is why we look before quoting anything.",
   },
   {
+    slug: "jamb-rot",
     name: "Rot at the bottom of the jamb or threshold",
     detail:
       "Common where a door faces weather directly — often repairable if caught before it spreads. Surface rot in the bottom few inches of a jamb can be cut out and pieced in. Rot that's traveled up the leg or into the subfloor underneath is a different conversation, and we'll say which one you have.",
   },
   {
+    slug: "sliding-door-rollers",
     name: "Sliding door won't glide, or has come off the track",
     detail:
       "Rollers and tracks wear out well before the door panel does — usually a hardware fix. The panel's full weight rides on two small wheels, so they flat-spot, and a track packed with grit will chew through a new set in a season if it isn't cleaned out at the same time.",
   },
   {
+    slug: "door-glass",
     name: "Cracked or broken glass in a door or sidelight",
     detail:
       "Decorative and plain glass inserts are custom-ordered to that door's pattern and size — a glass job, not a new door. Matching an existing decorative pattern isn't always possible on older doors, and when it isn't, we'll tell you that before ordering rather than after.",
   },
   {
+    slug: "lock-alignment",
     name: "Lock, deadbolt, or strike plate won't align",
     detail:
       "Almost always a settled hinge side, not a bad lock — realigning the jamb usually fixes it in one visit. If you're lifting or leaning on the door to get the deadbolt to throw, the lock is fine and the frame has moved.",
   },
   {
+    slug: "french-door-alignment",
     name: "French doors that don't close flush against each other",
     detail:
       "A hinge or astragal adjustment, not a reason to replace a matched pair. French doors are less forgiving than a single door because any error shows up doubled right down the middle where both edges meet.",
   },
   {
+    slug: "storm-door-hardware",
     name: "Storm door closer, hinge, or screen damage",
     detail:
       "Hardware-level fixes, usually done in one visit. Closers are the most common: they lose tension, slam, or stop holding the door open, and they're a cheap, quick swap rather than a new storm door.",
   },
   {
+    slug: "door-weatherstripping",
     name: "Draft around a door that looks fine",
     detail:
       "Weatherstripping and threshold adjustment — cheap, and often the whole fix. Most adjustable thresholds have screws that raise the sill back up against the sweep after years of compression, and most people never know they're there.",
@@ -183,10 +191,21 @@ export default function DoorRepairPage() {
         </SectionHeading>
         <div className="mt-10 divide-y divide-line">
           {repairs.map((r) => (
-            <div key={r.name} className="grid sm:grid-cols-[1fr_2fr] gap-3 sm:gap-10 py-6">
-              <h3 className="font-display text-lg font-semibold">{r.name}</h3>
-              <p className="text-ink/70 text-sm">{r.detail}</p>
-            </div>
+            <Link
+              key={r.slug}
+              href={`/doors/repair/${r.slug}`}
+              className="group grid sm:grid-cols-[1fr_2fr] gap-3 sm:gap-10 py-6 hover:bg-fog/60 transition-colors"
+            >
+              <h3 className="font-display text-lg font-semibold group-hover:text-gold transition-colors">
+                {r.name}
+              </h3>
+              <div>
+                <p className="text-ink/70 text-sm">{r.detail}</p>
+                <span className="mt-2 inline-block text-sm font-semibold text-gold">
+                  How we fix it →
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
         <p className="mt-8 text-sm text-ink/60 max-w-2xl">

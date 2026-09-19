@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ComponentType } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Eyebrow, SectionHeading, Divider } from "@/components/ui/Type";
@@ -7,6 +8,7 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { TrustBar } from "@/components/TrustBar";
 import { Faq } from "@/components/ui/Faq";
 import { WindowIcon, CasementIcon, BayIcon, EgressIcon } from "@/components/Icons";
+import { getCategoriesFor } from "@/lib/services";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -15,51 +17,15 @@ export const metadata: Metadata = {
     "Full window replacement in Lancaster County, PA — vinyl, wood, fiberglass, and aluminum windows, double-hung, casement, bay, and egress, measured and installed by a licensed local crew.",
 };
 
-const options = [
-  {
-    icon: WindowIcon,
-    name: "Double-hung",
-    detail: "The default for most homes — both sashes move, tilts in for cleaning from inside.",
-  },
-  {
-    icon: CasementIcon,
-    name: "Casement",
-    detail: "Crank-out, seals tighter than double-hung when closed. Good over sinks and counters.",
-  },
-  {
-    icon: BayIcon,
-    name: "Bay & bow",
-    detail: "Multi-panel projection — adds floor space and light. More structural planning up front.",
-  },
-  {
-    icon: EgressIcon,
-    name: "Egress",
-    detail: "Code-sized for basement bedrooms. We check the opening against code before quoting, not after.",
-  },
-];
+const typeIcons: Record<string, ComponentType> = {
+  "double-hung": WindowIcon,
+  casement: CasementIcon,
+  "bay-and-bow": BayIcon,
+  egress: EgressIcon,
+};
 
-const materials = [
-  {
-    name: "Vinyl",
-    detail:
-      "The most common choice in this area, and usually the best value — low maintenance, good insulation, no painting. What most people mean when they search for UPVC or vinyl window installers.",
-  },
-  {
-    name: "Wood-clad",
-    detail:
-      "Wood on the inside for a traditional look, a low-maintenance exterior cladding facing the weather. Costs more, common on homes where the interior trim needs to match original woodwork.",
-  },
-  {
-    name: "Fiberglass",
-    detail:
-      "Holds paint well, resists warping better than vinyl in temperature swings, and takes a narrower frame profile for more glass in the same opening. A step up in price from vinyl.",
-  },
-  {
-    name: "Aluminum",
-    detail:
-      "Slim sightlines and real strength for larger openings, but conducts more cold than the other three unless it's a thermally broken frame. Less common for full-house jobs, more common for specific openings.",
-  },
-];
+const options = getCategoriesFor("windows/replacement", "type");
+const materials = getCategoriesFor("windows/replacement", "material");
 
 const signs = [
   "Windows feel cold to stand near, even with the heat on",
@@ -272,15 +238,25 @@ export default function WindowReplacementPage() {
           What we install
         </SectionHeading>
         <div className="mt-10 grid sm:grid-cols-2 gap-5">
-          {options.map((o) => (
-            <div key={o.name} className="rounded-lg border border-line bg-paper p-6 sm:p-8">
-              <div className="-ml-2 scale-75 origin-left">
-                <o.icon />
-              </div>
-              <h3 className="-mt-2 font-display text-xl font-semibold">{o.name}</h3>
-              <p className="mt-2 text-sm text-ink/70">{o.detail}</p>
-            </div>
-          ))}
+          {options.map((o) => {
+            const Icon = typeIcons[o.slug];
+            return (
+              <Link
+                key={o.slug}
+                href={`/windows/replacement/${o.slug}`}
+                className="lift-on-hover group block rounded-lg border border-line bg-paper p-6 sm:p-8 hover:border-gold"
+              >
+                <div className="-ml-2 scale-75 origin-left">{Icon && <Icon />}</div>
+                <h3 className="-mt-2 font-display text-xl font-semibold group-hover:text-gold transition-colors">
+                  {o.name}
+                </h3>
+                <p className="mt-2 text-sm text-ink/70">{o.cardDetail}</p>
+                <span className="mt-4 inline-block text-sm font-semibold text-gold">
+                  More on {o.name.toLowerCase()} →
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
@@ -297,10 +273,19 @@ export default function WindowReplacementPage() {
         </p>
         <div className="mt-10 grid sm:grid-cols-2 gap-5">
           {materials.map((m) => (
-            <div key={m.name} className="rounded-lg border border-line bg-paper p-6 sm:p-8">
-              <h3 className="font-display text-xl font-semibold">{m.name}</h3>
-              <p className="mt-2 text-sm text-ink/70">{m.detail}</p>
-            </div>
+            <Link
+              key={m.slug}
+              href={`/windows/replacement/${m.slug}`}
+              className="lift-on-hover group block rounded-lg border border-line bg-paper p-6 sm:p-8 hover:border-gold"
+            >
+              <h3 className="font-display text-xl font-semibold group-hover:text-gold transition-colors">
+                {m.name}
+              </h3>
+              <p className="mt-2 text-sm text-ink/70">{m.cardDetail}</p>
+              <span className="mt-4 inline-block text-sm font-semibold text-gold">
+                More on {m.name.toLowerCase()} windows →
+              </span>
+            </Link>
           ))}
         </div>
       </section>
