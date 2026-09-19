@@ -5,13 +5,14 @@ import { Eyebrow, SectionHeading, Divider } from "@/components/ui/Type";
 import { ButtonLink } from "@/components/ui/Button";
 import { QuoteForm } from "@/components/QuoteForm";
 import { TrustBar } from "@/components/TrustBar";
+import { Faq } from "@/components/ui/Faq";
 import { WindowIcon, CasementIcon, BayIcon, EgressIcon } from "@/components/Icons";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Window Replacement",
   description:
-    "Full window replacement in Lancaster County, PA — vinyl, double-hung, casement, bay, and egress windows, measured and installed by a licensed local crew.",
+    "Full window replacement in Lancaster County, PA — vinyl, wood, fiberglass, and aluminum windows, double-hung, casement, bay, and egress, measured and installed by a licensed local crew.",
 };
 
 const options = [
@@ -34,6 +35,29 @@ const options = [
     icon: EgressIcon,
     name: "Egress",
     detail: "Code-sized for basement bedrooms. We check the opening against code before quoting, not after.",
+  },
+];
+
+const materials = [
+  {
+    name: "Vinyl",
+    detail:
+      "The most common choice in this area, and usually the best value — low maintenance, good insulation, no painting. What most people mean when they search for UPVC or vinyl window installers.",
+  },
+  {
+    name: "Wood-clad",
+    detail:
+      "Wood on the inside for a traditional look, a low-maintenance exterior cladding facing the weather. Costs more, common on homes where the interior trim needs to match original woodwork.",
+  },
+  {
+    name: "Fiberglass",
+    detail:
+      "Holds paint well, resists warping better than vinyl in temperature swings, and takes a narrower frame profile for more glass in the same opening. A step up in price from vinyl.",
+  },
+  {
+    name: "Aluminum",
+    detail:
+      "Slim sightlines and real strength for larger openings, but conducts more cold than the other three unless it's a thermally broken frame. Less common for full-house jobs, more common for specific openings.",
   },
 ];
 
@@ -99,6 +123,84 @@ const methods = [
   },
 ];
 
+const included = [
+  {
+    name: "Removal and disposal of the old units",
+    detail:
+      "The old windows leave with us. That includes the sashes, the frames on a full-frame job, and the packaging the new units arrive in.",
+  },
+  {
+    name: "Insulating and sealing the opening",
+    detail:
+      "The gap between a new unit and the rough opening gets insulated and sealed rather than stuffed and covered. This is the step that quietly decides whether the new window actually performs like the label says it will.",
+  },
+  {
+    name: "Interior and exterior trim",
+    detail:
+      "Exterior capping or trim to shed water, and interior trim finished to match what's already in the room. On insert jobs we work to keep the existing interior casing intact.",
+  },
+  {
+    name: "Caulk lines you'd look at twice",
+    detail:
+      "Customers bring this up in reviews unprompted, which is a strange thing to be known for and also exactly the point.",
+  },
+  {
+    name: "Cleanup and a walkthrough",
+    detail:
+      "Every window opened, closed, locked, and tilted with you there before we call the job done.",
+  },
+];
+
+const glassOptions = [
+  {
+    name: "Low-E coating",
+    detail:
+      "A microscopically thin coating that reflects heat back where it came from, keeping warmth inside in winter and solar gain outside in summer. Standard on what we install, not an upsell line.",
+  },
+  {
+    name: "Argon or krypton gas fill",
+    detail:
+      "Denser than air, so it slows heat moving across the gap between panes. Argon is the normal choice; krypton performs better in the narrower gaps of triple-pane units.",
+  },
+  {
+    name: "Grilles and grids",
+    detail:
+      "Between the glass for easy cleaning, or applied for a more traditional look. Pattern and bar width can be matched to the windows you're keeping.",
+  },
+  {
+    name: "Obscure and tempered glass",
+    detail:
+      "Frosted or patterned glass for bathrooms, and tempered safety glass wherever code requires it, near doors, tubs, stairs, and low sills.",
+  },
+];
+
+const faqs = [
+  {
+    q: "How much does window replacement cost?",
+    a: "It depends on the material, the size and number of openings, insert versus full-frame work, and whether the crew finds rot once the old unit is out. We break down what actually moves the price in our window cost guide on the blog — the honest answer is we measure first and give you a real written number, not a phone estimate.",
+  },
+  {
+    q: "How long does a typical window replacement take?",
+    a: "A single insert replacement is usually a few hours. A full-house job runs anywhere from one to several days depending on how many openings and whether any of them need full-frame work. We give you a real timeline once we've measured, not before.",
+  },
+  {
+    q: "Do I need a permit to replace windows?",
+    a: "Sometimes, depending on the township and whether the opening size is changing. We handle this as part of the job rather than leaving it for you to sort out.",
+  },
+  {
+    q: "What's the difference between insert and full-frame replacement?",
+    a: "Insert replacement fits a new window inside your existing frame, which stays in place — faster and less invasive. Full-frame replacement removes everything down to the rough opening, which is what rot, a size change, or older construction usually requires. We decide which one applies during the on-site measurement.",
+  },
+  {
+    q: "Can you match the style of my existing windows?",
+    a: "In most cases, yes — grille pattern, frame color, and glass tint can all be matched or coordinated, especially useful when you're replacing a few windows now and the rest later.",
+  },
+  {
+    q: "Do you install energy-efficient, Low-E windows?",
+    a: "Yes, Low-E coatings and gas-filled insulated glass are standard options on the units we install, not an upcharge add-on. We can walk you through what that actually changes about comfort and your energy bill.",
+  },
+];
+
 export default function WindowReplacementPage() {
   return (
     <>
@@ -154,6 +256,10 @@ export default function WindowReplacementPage() {
           <Link href="/windows/repair" className="text-gold underline underline-offset-4">
             worth checking repair first
           </Link>
+          , or read our full{" "}
+          <Link href="/blog/house-window-repair-guide" className="text-gold underline underline-offset-4">
+            window repair diagnosis guide
+          </Link>
           .
         </p>
       </section>
@@ -173,6 +279,27 @@ export default function WindowReplacementPage() {
               </div>
               <h3 className="-mt-2 font-display text-xl font-semibold">{o.name}</h3>
               <p className="mt-2 text-sm text-ink/70">{o.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <Divider className="max-w-7xl mx-auto" />
+
+      <section className="mx-auto max-w-7xl px-5 sm:px-8 py-20">
+        <Eyebrow>Frame materials</Eyebrow>
+        <SectionHeading as="h2" className="text-2xl sm:text-3xl max-w-xl">
+          What it&apos;s made of matters as much as the style
+        </SectionHeading>
+        <p className="mt-4 max-w-2xl text-ink/70">
+          We install all four. What&apos;s right for one opening on your house
+          isn&apos;t always right for another.
+        </p>
+        <div className="mt-10 grid sm:grid-cols-2 gap-5">
+          {materials.map((m) => (
+            <div key={m.name} className="rounded-lg border border-line bg-paper p-6 sm:p-8">
+              <h3 className="font-display text-xl font-semibold">{m.name}</h3>
+              <p className="mt-2 text-sm text-ink/70">{m.detail}</p>
             </div>
           ))}
         </div>
@@ -215,6 +342,13 @@ export default function WindowReplacementPage() {
             </div>
           ))}
         </div>
+        <p className="mt-6 text-sm text-ink/60 max-w-2xl">
+          Basement bedroom or full egress dig-out? We cover that in more depth in our{" "}
+          <Link href="/blog/basement-window-installation-repair" className="text-gold underline underline-offset-4">
+            basement window guide
+          </Link>
+          .
+        </p>
       </section>
 
       {/* HOW WE REPLACE */}
@@ -242,6 +376,50 @@ export default function WindowReplacementPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-5 sm:px-8 py-20">
+        <Eyebrow>Glass &amp; efficiency</Eyebrow>
+        <SectionHeading as="h2" className="text-2xl sm:text-3xl max-w-xl">
+          What&apos;s actually in the glass
+        </SectionHeading>
+        <p className="mt-4 max-w-2xl text-ink/70">
+          Most of a window&apos;s performance comes from the glass package, not
+          the frame around it. These are the options worth understanding before
+          you compare two quotes.
+        </p>
+        <div className="mt-10 grid sm:grid-cols-2 gap-5">
+          {glassOptions.map((g) => (
+            <div key={g.name} className="rounded-lg border border-line bg-paper p-6 sm:p-8">
+              <h3 className="font-display text-xl font-semibold">{g.name}</h3>
+              <p className="mt-2 text-sm text-ink/70">{g.detail}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-6 text-sm text-ink/60 max-w-2xl">
+          More on what a gas fill does, and what happens when one fails, in our{" "}
+          <Link href="/blog/gas-filled-window-panes-explained" className="text-gold underline underline-offset-4">
+            explainer on gas-filled panes
+          </Link>
+          .
+        </p>
+      </section>
+
+      <Divider className="max-w-7xl mx-auto" />
+
+      <section className="mx-auto max-w-7xl px-5 sm:px-8 py-20">
+        <Eyebrow>What&apos;s included</Eyebrow>
+        <SectionHeading as="h2" className="text-2xl sm:text-3xl max-w-2xl">
+          A replacement quote from us covers the whole job, not just the window
+        </SectionHeading>
+        <div className="mt-10 divide-y divide-line">
+          {included.map((item) => (
+            <div key={item.name} className="grid sm:grid-cols-[1fr_2fr] gap-3 sm:gap-10 py-6">
+              <h3 className="font-display text-lg font-semibold text-ink">{item.name}</h3>
+              <p className="text-sm text-ink/70">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="bg-ink text-white py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-center">
           <QuoteForm />
@@ -258,10 +436,18 @@ export default function WindowReplacementPage() {
             </p>
             <p className="mt-4 text-white/70 max-w-md">
               We measure on site, first — that quote is free, in {site.serviceCounty},
-              no obligation attached.
+              no obligation attached. A written quote is good for 30 days.
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 sm:px-8 py-20">
+        <Eyebrow>Questions</Eyebrow>
+        <SectionHeading as="h2" className="text-2xl sm:text-3xl max-w-xl">
+          Window replacement, frequently asked
+        </SectionHeading>
+        <Faq items={faqs} />
       </section>
     </>
   );
