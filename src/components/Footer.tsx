@@ -63,8 +63,13 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/15">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 py-6 flex flex-col sm:flex-row justify-between gap-3 text-xs text-white/50">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-white/50">
           <p>© {new Date().getFullYear()} {site.name}. {site.license}.</p>
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link href="/privacy" className="hover:text-gold">Privacy</Link>
+            <Link href="/terms" className="hover:text-gold">Terms</Link>
+            <Link href="/sitemap" className="hover:text-gold">Sitemap</Link>
+          </nav>
           <p>
             Site by{" "}
             <a

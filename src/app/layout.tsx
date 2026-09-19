@@ -20,7 +20,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`https://${site.domain}`),
+  metadataBase: new URL(site.url),
   title: {
     default: `${site.name} — ${site.serviceCounty}`,
     template: `%s | ${site.name}`,
