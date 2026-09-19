@@ -1,5 +1,5 @@
 export const site = {
-  name: "Prestigious Home Improvements",
+  name: "Prestigious Windows & Doors",
   shortName: "Prestigious",
   tagline: "Windows & Doors",
   domain: "prestigiouswindowsdoors.com",

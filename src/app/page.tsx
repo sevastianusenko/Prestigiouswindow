@@ -163,7 +163,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-5 sm:px-8 w-full">
             <div className="max-w-xl">
               <h1 className="font-display font-bold uppercase text-balance leading-[1.05] text-white text-4xl sm:text-5xl lg:text-6xl">
-                Trust your home to Prestigious
+                Trust your home to Prestigious Windows &amp; Doors
               </h1>
               <p className="mt-5 text-lg text-white/90 max-w-md">
                 High-quality windows and doors, installed and repaired by a
@@ -182,7 +182,7 @@ export default function Home() {
       {/* NEUTRAL INTRO — plain text, no image, no hard CTA */}
       <section className="mx-auto max-w-4xl px-5 sm:px-8 py-16 sm:py-20 text-center">
         <p className="text-lg sm:text-xl text-ink/80 leading-relaxed">
-          Prestigious Home Improvements installs and repairs windows and
+          {site.name} installs and repairs windows and
           doors across {site.serviceCounty}, based in {site.baseTown}. Every
           job starts with an in-person measurement, not a guess over the
           phone. Whether it&apos;s one window, a full house, or a single
@@ -290,7 +290,7 @@ export default function Home() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
               src="/photos/van-construction-site.jpg"
-              alt="A Prestigious Home Improvements service van parked at a construction site"
+              alt="A Prestigious Windows & Doors service van parked at a construction site"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"

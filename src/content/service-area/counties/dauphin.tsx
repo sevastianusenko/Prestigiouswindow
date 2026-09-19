@@ -160,7 +160,7 @@ export default function Content() {
       <LocalFaq
         items={[
           {
-            q: "Is Dauphin County too far for Prestigious Home Improvements to serve?",
+            q: "Is Dauphin County too far for Prestigious Windows & Doors to serve?",
             a: "Not too far, but it is our farthest reach, 57 to 73 minutes from our East Earl shop depending on the town. We take jobs here regularly, especially older rowhome and borough window and door work, but we're more selective about which jobs make sense given the drive than we are closer to home.",
           },
           {

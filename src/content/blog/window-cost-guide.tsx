@@ -211,7 +211,7 @@ export default function Content() {
 
       <ArticleFigure
         src="/photos/hero-finished-exterior.jpg"
-        alt="Recent window and door installation work by Prestigious Home Improvements"
+        alt="Recent window and door installation work by Prestigious Windows & Doors"
         caption="Finished trim and a clean caulk line are part of what you are paying for, not an afterthought."
       />
 

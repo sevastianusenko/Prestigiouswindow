@@ -63,7 +63,7 @@ export default async function TownPage(props: PageProps<"/service-area/[town]">)
         <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
               src={photoByFocus[town.focus]}
-              alt="Recent window and door installation work by Prestigious Home Improvements"
+              alt="Recent window and door installation work by Prestigious Windows & Doors"
               fill
               priority
               sizes="(min-width: 1024px) 50vw, 100vw"

@@ -26,7 +26,7 @@ export default function AboutPage() {
             We&apos;re new here. The standard isn&apos;t.
           </SectionHeading>
           <p className="mt-6 text-lg text-ink/75 max-w-lg">
-            Prestigious Home Improvements is a new company name in {site.serviceCounty}
+            {site.name} is a new company name in {site.serviceCounty}
             — but the work behind it isn&apos;t a first attempt. We&apos;re licensed,
             insured, and we measure every job on site before we quote it. No
             fabricated review count, no &quot;family-owned since&quot; story we made
