@@ -25,6 +25,7 @@ export function Footer() {
             <li><Link href="/doors/replacement" className="hover:text-gold">Door Replacement</Link></li>
             <li><Link href="/doors/repair" className="hover:text-gold">Door Repair</Link></li>
             <li><Link href="/old-homes" className="hover:text-gold">Windows for Older Homes</Link></li>
+            <li><Link href="/blog" className="hover:text-gold">Blog</Link></li>
           </ul>
         </div>
 

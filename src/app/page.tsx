@@ -3,35 +3,28 @@ import Image from "next/image";
 import { Eyebrow, SectionHeading, Divider } from "@/components/ui/Type";
 import { ButtonLink } from "@/components/ui/Button";
 import { QuoteForm } from "@/components/QuoteForm";
-import {
-  WindowIcon,
-  DoorIcon,
-  QuoteIcon,
-  CrewIcon,
-  DetailIcon,
-  RepeatIcon,
-  StarIcon,
-} from "@/components/Icons";
 import { BrandMark } from "@/components/BrandMark";
 import { site } from "@/lib/site";
+import { counties } from "@/lib/counties";
+import { getTownsByCounty } from "@/lib/towns";
 
 const stages = [
   {
-    icon: WindowIcon,
+    icon: "/icons/gold-window.png",
     title: "Find your window or door",
     body: "Just getting started — help me see what fits my house.",
     href: "/windows/replacement",
     cta: "See options",
   },
   {
-    icon: DoorIcon,
+    icon: "/icons/gold-door.png",
     title: "Repair or replace?",
     body: "Something's wrong with one — not sure which one I need.",
     href: "/repair-or-replace",
     cta: "Find out",
   },
   {
-    icon: QuoteIcon,
+    icon: "/icons/gold-quote.png",
     title: "Looking for a quote",
     body: "Ready to connect and get a real, measured number.",
     href: "/contact",
@@ -80,53 +73,27 @@ const signs: Sign[] = [
 
 const reasons = [
   {
-    icon: CrewIcon,
+    icon: "/icons/gold-crew.png",
     title: "Real crew, not subcontractors",
     body: "Reviews name our actual installers because they're the same people who show up every time, not a rotating cast of subs.",
   },
   {
-    icon: DetailIcon,
+    icon: "/icons/gold-detail.png",
     title: "The kind of detail people notice",
     body: "Customers bring up things like clean caulk lines without being asked. That's not an accident, it's the standard.",
   },
   {
-    icon: RepeatIcon,
+    icon: "/icons/gold-repeat.png",
     title: "People call us back",
     body: "More than one customer has hired us twice, once for windows and doors, later for something else entirely.",
   },
   {
-    icon: StarIcon,
+    icon: "/icons/gold-star.png",
     title: "Five stars, unedited",
     body: "Every review on our Google profile is five stars. We don't write them and we don't hide the bad ones, because there aren't any yet.",
   },
 ];
 
-const counties = [
-  {
-    name: "Lancaster County",
-    towns: ["East Earl", "Blue Ball", "New Holland", "Terre Hill", "Goodville"],
-  },
-  {
-    name: "Berks County",
-    towns: ["Morgantown", "New Morgan", "Geigertown", "Birdsboro", "Douglassville"],
-  },
-  {
-    name: "Chester County",
-    towns: ["Honey Brook", "Elverson", "Parkesburg", "Atglen", "Coatesville"],
-  },
-  {
-    name: "Lebanon County",
-    towns: ["Lebanon", "Annville", "Myerstown", "Cornwall", "Jonestown"],
-  },
-  {
-    name: "Dauphin County",
-    towns: ["Harrisburg", "Hershey", "Hummelstown", "Middletown", "Steelton"],
-  },
-  {
-    name: "York County",
-    towns: ["York", "Wrightsville", "Hallam", "Red Lion", "Windsor"],
-  },
-];
 
 const reviews = [
   {
@@ -234,7 +201,7 @@ export default function Home() {
           <div className="mt-12 grid sm:grid-cols-3 gap-10 sm:gap-8">
             {stages.map((s) => (
               <div key={s.title} className="flex flex-col items-center text-center">
-                <s.icon />
+                <Image src={s.icon} alt="" width={80} height={80} className="h-20 w-20 object-contain" />
                 <h3 className="mt-5 font-display font-bold text-lg text-ink">{s.title}</h3>
                 <p className="mt-2 text-sm text-ink/60 max-w-[220px]">{s.body}</p>
                 <ButtonLink href={s.href} className="mt-6 text-sm">
@@ -372,10 +339,8 @@ export default function Home() {
         <div className="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-8">
           {reasons.map((r) => (
             <div key={r.title} className="border-t border-line pt-5">
-              <div className="-ml-2 scale-75 origin-left">
-                <r.icon />
-              </div>
-              <h3 className="-mt-2 font-display font-bold text-lg text-ink">{r.title}</h3>
+              <Image src={r.icon} alt="" width={56} height={56} className="-ml-1 h-14 w-14 object-contain" />
+              <h3 className="mt-1 font-display font-bold text-lg text-ink">{r.title}</h3>
               <p className="mt-2 text-sm text-ink/70">{r.body}</p>
             </div>
           ))}
@@ -431,14 +396,23 @@ export default function Home() {
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {counties.map((c) => (
-            <div key={c.name} className="rounded-lg border border-line bg-white p-6 sm:p-7">
-              <span className="font-display font-bold text-xl text-ink">{c.name}</span>
-              <p className="mt-3 text-xs uppercase tracking-wide text-ink/50">
-                {c.towns.join(" · ")}
-              </p>
-            </div>
-          ))}
+          {counties.map((c) => {
+            const townsHere = getTownsByCounty(c.slug);
+            return (
+              <Link
+                key={c.slug}
+                href={`/service-area/county/${c.slug}`}
+                className="rounded-lg border border-line bg-white p-6 sm:p-7 hover:border-gold transition-colors group"
+              >
+                <span className="font-display font-bold text-xl text-ink group-hover:text-gold transition-colors">
+                  {c.name}
+                </span>
+                <p className="mt-3 text-xs uppercase tracking-wide text-ink/50">
+                  {townsHere.map((t) => t.name).join(" · ")}
+                </p>
+              </Link>
+            );
+          })}
         </div>
       </section>
 

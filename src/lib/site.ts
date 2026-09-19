@@ -32,5 +32,6 @@ export const primaryNav = [
   },
   { label: "Repair or Replace?", href: "/repair-or-replace" },
   { label: "Service Area", href: "/service-area" },
+  { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
 ] as const;

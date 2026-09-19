@@ -5,8 +5,10 @@ import { notFound } from "next/navigation";
 import { Eyebrow, SectionHeading, Divider } from "@/components/ui/Type";
 import { ButtonLink } from "@/components/ui/Button";
 import { QuoteForm } from "@/components/QuoteForm";
-import { coreTowns, getTown } from "@/lib/towns";
+import { towns, getTown, getTownsByCounty } from "@/lib/towns";
+import { getCounty } from "@/lib/counties";
 import { site } from "@/lib/site";
+import { townContentMap } from "@/content/service-area/towns";
 
 const photoByFocus = {
   windows: "/photos/window-double-hung.jpg",
@@ -15,7 +17,7 @@ const photoByFocus = {
 } as const;
 
 export function generateStaticParams() {
-  return coreTowns.map((t) => ({ town: t.slug }));
+  return towns.map((t) => ({ town: t.slug }));
 }
 
 export async function generateMetadata(
@@ -35,7 +37,9 @@ export default async function TownPage(props: PageProps<"/service-area/[town]">)
   const town = getTown(slug);
   if (!town) notFound();
 
-  const others = coreTowns.filter((t) => t.slug !== town.slug);
+  const others = getTownsByCounty(town.countySlug).filter((t) => t.slug !== town.slug);
+  const county = getCounty(town.countySlug);
+  const Content = townContentMap[town.slug];
 
   return (
     <>
@@ -84,6 +88,15 @@ export default async function TownPage(props: PageProps<"/service-area/[town]">)
           </Link>
         ))}
       </section>
+
+      {Content && (
+        <>
+          <Divider className="max-w-7xl mx-auto" />
+          <div className="article mx-auto max-w-7xl px-5 sm:px-8 py-16 sm:py-20">
+            <Content />
+          </div>
+        </>
+      )}
 
       <Divider className="max-w-7xl mx-auto" />
 
