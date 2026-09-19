@@ -63,6 +63,63 @@ body {
   animation: reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* Scroll-reveal system: elements marked .reveal-item stay fully visible
+   by default (no JS, or JS not yet ready = normal static page). Only
+   once RevealObserver has mounted does it stamp .js-anim on <html>
+   (see layout.tsx beforeInteractive script) and start observing —
+   from that point, items animate in the moment they enter view instead
+   of appearing pre-hidden. This avoids any flash-of-invisible-content
+   and degrades to a plain static page if JS fails. */
+.js-anim .reveal-item {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js-anim .reveal-item.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ambient hero zoom — slow, subtle, ~1.06x over 18s. */
+@keyframes hero-breathe {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+
+.hero-breathe {
+  animation: hero-breathe 18s ease-out both;
+}
+
+/* Card lift on hover — used on grid cards throughout the homepage. */
+.lift-on-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.lift-on-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -18px rgba(16, 16, 16, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-anim .reveal-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero-breathe {
+    animation: none;
+  }
+  .lift-on-hover:hover {
+    transform: none;
+  }
+}
+
 /* Blog article body copy — semantic HTML inside <div className="article">,
    styled once here so post content stays plain markup. */
 .article {

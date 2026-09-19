@@ -155,22 +155,28 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className="object-cover hero-breathe"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/35 to-transparent" aria-hidden />
         </div>
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto max-w-7xl px-5 sm:px-8 w-full">
             <div className="max-w-xl">
-              <h1 className="font-display font-bold uppercase text-balance leading-[1.05] text-white text-4xl sm:text-5xl lg:text-6xl">
+              <h1 className="reveal font-display font-bold uppercase text-balance leading-[1.05] text-white text-4xl sm:text-5xl lg:text-6xl">
                 Trust your home to Prestigious Windows &amp; Doors
               </h1>
-              <p className="mt-5 text-lg text-white/90 max-w-md">
+              <p
+                className="reveal mt-5 text-lg text-white/90 max-w-md"
+                style={{ animationDelay: "120ms" }}
+              >
                 High-quality windows and doors, installed and repaired by a
                 licensed local crew. Based in {site.baseTown}, serving{" "}
                 {site.serviceCounty}.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div
+                className="reveal mt-8 flex flex-wrap gap-4"
+                style={{ animationDelay: "240ms" }}
+              >
                 <ButtonLink href="/windows/replacement">Explore windows</ButtonLink>
                 <ButtonLink href="/doors/replacement">Explore doors</ButtonLink>
               </div>
@@ -181,7 +187,7 @@ export default function Home() {
 
       {/* NEUTRAL INTRO — plain text, no image, no hard CTA */}
       <section className="mx-auto max-w-4xl px-5 sm:px-8 py-16 sm:py-20 text-center">
-        <p className="text-lg sm:text-xl text-ink/80 leading-relaxed">
+        <p className="reveal-item text-lg sm:text-xl text-ink/80 leading-relaxed">
           {site.name} installs and repairs windows and
           doors across {site.serviceCounty}, based in {site.baseTown}. Every
           job starts with an in-person measurement, not a guess over the
@@ -199,9 +205,19 @@ export default function Home() {
             Where are you in your project?
           </h2>
           <div className="mt-12 grid sm:grid-cols-3 gap-10 sm:gap-8">
-            {stages.map((s) => (
-              <div key={s.title} className="flex flex-col items-center text-center">
-                <Image src={s.icon} alt="" width={80} height={80} className="h-20 w-20 object-contain" />
+            {stages.map((s, i) => (
+              <div
+                key={s.title}
+                className="reveal-item group flex flex-col items-center text-center"
+                style={{ transitionDelay: `${i * 90}ms` }}
+              >
+                <Image
+                  src={s.icon}
+                  alt=""
+                  width={80}
+                  height={80}
+                  className="h-20 w-20 object-contain transition-transform duration-300 ease-out group-hover:scale-110"
+                />
                 <h3 className="mt-5 font-display font-bold text-lg text-ink">{s.title}</h3>
                 <p className="mt-2 text-sm text-ink/60 max-w-[220px]">{s.body}</p>
                 <ButtonLink href={s.href} className="mt-6 text-sm">
@@ -219,15 +235,19 @@ export default function Home() {
           The right fit for your project
         </h2>
         <div className="grid sm:grid-cols-2 gap-10 sm:gap-8">
-          {products.map((p) => (
-            <div key={p.title}>
+          {products.map((p, i) => (
+            <div
+              key={p.title}
+              className="reveal-item group"
+              style={{ transitionDelay: `${i * 120}ms` }}
+            >
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
                 <Image
                   src={p.image}
                   alt={p.alt}
                   fill
                   sizes="(min-width: 640px) 46vw, 100vw"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                 />
               </div>
               <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-ink/50">
@@ -250,14 +270,16 @@ export default function Home() {
       {/* SIGNS TO REPLACE */}
       <section className="bg-fog py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-16 items-start">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-lg lg:sticky lg:top-24">
-            <Image
-              src="/photos/door-slider-white-patio.jpg"
-              alt="A white multi-panel sliding patio door opening onto a brick patio"
-              fill
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover"
-            />
+          <div className="lg:sticky lg:top-24">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
+              <Image
+                src="/photos/door-slider-white-patio.jpg"
+                alt="A white multi-panel sliding patio door opening onto a brick patio"
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
           <div>
             <Eyebrow>Why replace</Eyebrow>
@@ -270,10 +292,20 @@ export default function Home() {
               time to replace it.
             </p>
             <div className="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-8">
-              {signs.map((s) => (
-                <div key={s.title} className="border-t border-line pt-5">
+              {signs.map((s, i) => (
+                <div
+                  key={s.title}
+                  className="reveal-item group border-t border-line pt-5"
+                  style={{ transitionDelay: `${(i % 2) * 90 + Math.floor(i / 2) * 60}ms` }}
+                >
                   <div className="-ml-1 h-16 flex items-center">
-                    <Image src={s.img} alt="" width={72} height={72} className="h-16 w-16 object-contain" />
+                    <Image
+                      src={s.img}
+                      alt=""
+                      width={72}
+                      height={72}
+                      className="h-16 w-16 object-contain transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-rotate-3"
+                    />
                   </div>
                   <h3 className="mt-2 font-display font-bold text-lg text-ink">{s.title}</h3>
                   <p className="mt-2 text-sm text-ink/70">{s.body}</p>
@@ -308,22 +340,21 @@ export default function Home() {
               actual work.
             </p>
             <dl className="mt-8 space-y-4 text-sm">
-              <div className="flex gap-4 border-t border-line pt-4">
-                <dt className="text-gold font-bold w-6">01</dt>
-                <dd className="text-ink/80">Call or request a quote online</dd>
-              </div>
-              <div className="flex gap-4 border-t border-line pt-4">
-                <dt className="text-gold font-bold w-6">02</dt>
-                <dd className="text-ink/80">On-site measurement, no obligation</dd>
-              </div>
-              <div className="flex gap-4 border-t border-line pt-4">
-                <dt className="text-gold font-bold w-6">03</dt>
-                <dd className="text-ink/80">Written quote — materials, timeline, price</dd>
-              </div>
-              <div className="flex gap-4 border-t border-line pt-4 border-b pb-4">
-                <dt className="text-gold font-bold w-6">04</dt>
-                <dd className="text-ink/80">Install, cleanup, and a final walkthrough</dd>
-              </div>
+              {[
+                { n: "01", text: "Call or request a quote online" },
+                { n: "02", text: "On-site measurement, no obligation" },
+                { n: "03", text: "Written quote — materials, timeline, price" },
+                { n: "04", text: "Install, cleanup, and a final walkthrough" },
+              ].map((step, i, arr) => (
+                <div
+                  key={step.n}
+                  className={`reveal-item flex gap-4 border-t border-line pt-4 ${i === arr.length - 1 ? "border-b pb-4" : ""}`}
+                  style={{ transitionDelay: `${i * 100}ms` }}
+                >
+                  <dt className="text-gold font-bold w-6">{step.n}</dt>
+                  <dd className="text-ink/80">{step.text}</dd>
+                </div>
+              ))}
             </dl>
           </div>
         </div>
@@ -337,9 +368,19 @@ export default function Home() {
           What our customers actually notice
         </SectionHeading>
         <div className="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-8">
-          {reasons.map((r) => (
-            <div key={r.title} className="border-t border-line pt-5">
-              <Image src={r.icon} alt="" width={56} height={56} className="-ml-1 h-14 w-14 object-contain" />
+          {reasons.map((r, i) => (
+            <div
+              key={r.title}
+              className="reveal-item group border-t border-line pt-5"
+              style={{ transitionDelay: `${i * 100}ms` }}
+            >
+              <Image
+                src={r.icon}
+                alt=""
+                width={56}
+                height={56}
+                className="-ml-1 h-14 w-14 object-contain transition-transform duration-300 ease-out group-hover:scale-110"
+              />
               <h3 className="mt-1 font-display font-bold text-lg text-ink">{r.title}</h3>
               <p className="mt-2 text-sm text-ink/70">{r.body}</p>
             </div>
@@ -355,17 +396,23 @@ export default function Home() {
             Real reviews, straight from Google
           </SectionHeading>
           <div className="mt-12 grid sm:grid-cols-2 gap-6">
-            {reviews.map((r) => (
-              <div key={r.name} className="rounded-lg border border-white/15 bg-white/5 p-6 sm:p-8">
-                <span className="text-gold tracking-wide" aria-hidden>
-                  ★★★★★
-                </span>
-                <p className="mt-4 text-white/85 text-sm leading-relaxed">
-                  &quot;{r.text}&quot;
-                </p>
-                <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-white/50">
-                  {r.name} · {r.time}
-                </p>
+            {reviews.map((r, i) => (
+              <div
+                key={r.name}
+                className="reveal-item"
+                style={{ transitionDelay: `${i * 90}ms` }}
+              >
+                <div className="h-full rounded-lg border border-white/15 bg-white/5 p-6 sm:p-8 transition-[transform,border-color,background-color] duration-300 ease-out hover:-translate-y-1 hover:border-white/35 hover:bg-white/[0.07]">
+                  <span className="text-gold tracking-wide" aria-hidden>
+                    ★★★★★
+                  </span>
+                  <p className="mt-4 text-white/85 text-sm leading-relaxed">
+                    &quot;{r.text}&quot;
+                  </p>
+                  <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-white/50">
+                    {r.name} · {r.time}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -396,21 +443,26 @@ export default function Home() {
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {counties.map((c) => {
+          {counties.map((c, i) => {
             const townsHere = getTownsByCounty(c.slug);
             return (
-              <Link
+              <div
                 key={c.slug}
-                href={`/service-area/county/${c.slug}`}
-                className="rounded-lg border border-line bg-white p-6 sm:p-7 hover:border-gold transition-colors group"
+                className="reveal-item"
+                style={{ transitionDelay: `${i * 70}ms` }}
               >
-                <span className="font-display font-bold text-xl text-ink group-hover:text-gold transition-colors">
-                  {c.name}
-                </span>
-                <p className="mt-3 text-xs uppercase tracking-wide text-ink/50">
-                  {townsHere.map((t) => t.name).join(" · ")}
-                </p>
-              </Link>
+                <Link
+                  href={`/service-area/county/${c.slug}`}
+                  className="lift-on-hover group block h-full rounded-lg border border-line bg-white p-6 sm:p-7 hover:border-gold"
+                >
+                  <span className="font-display font-bold text-xl text-ink group-hover:text-gold transition-colors">
+                    {c.name}
+                  </span>
+                  <p className="mt-3 text-xs uppercase tracking-wide text-ink/50">
+                    {townsHere.map((t) => t.name).join(" · ")}
+                  </p>
+                </Link>
+              </div>
             );
           })}
         </div>
@@ -435,7 +487,7 @@ export default function Home() {
         </div>
         <div className="absolute inset-0 flex items-end">
           <div className="mx-auto max-w-7xl px-5 sm:px-8 pb-14 sm:pb-16 w-full">
-            <div className="max-w-xl">
+            <div className="reveal-item max-w-xl">
               <Eyebrow>An honest gap</Eyebrow>
               <h2 className="font-display font-bold text-balance leading-[1.1] text-white text-3xl sm:text-4xl">
                 Old house? The opening usually doesn&apos;t need to change.
@@ -456,7 +508,7 @@ export default function Home() {
 
       {/* QUOTE CTA */}
       <section className="mx-auto max-w-7xl px-5 sm:px-8 pb-24 grid lg:grid-cols-2 gap-12 items-start">
-        <div>
+        <div className="reveal-item">
           <Eyebrow>Start here</Eyebrow>
           <SectionHeading as="h2" className="text-3xl sm:text-4xl">
             Tell us what&apos;s going on. We&apos;ll tell you what it needs.

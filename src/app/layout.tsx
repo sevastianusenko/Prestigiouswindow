@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Jost, Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { RevealObserver } from "@/components/RevealObserver";
 import { site } from "@/lib/site";
 
 const jost = Jost({
@@ -29,11 +31,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${jost.variable} ${openSans.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${jost.variable} ${openSans.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
       <body className="min-h-full flex flex-col bg-paper text-ink font-sans">
+        <Script id="js-anim" strategy="beforeInteractive">
+          {"document.documentElement.classList.add('js-anim')"}
+        </Script>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <RevealObserver />
       </body>
     </html>
   );
