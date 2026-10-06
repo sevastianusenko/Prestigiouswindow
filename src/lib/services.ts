@@ -91,6 +91,30 @@ const PHOTO = {
     src: "/photos/house-knight-wood.jpg",
     alt: "A craftsman-style bungalow with a covered front porch and a dormer window in the roof",
   },
+  sliderPairPatio: {
+    src: "/photos/door-slider-pair-covered-patio.jpg",
+    alt: "Two newly installed white sliding patio doors side by side under a covered patio, factory stickers still on the glass",
+  },
+  sliderTrack: {
+    src: "/photos/door-slider-three-panel-track.jpg",
+    alt: "A three-panel white sliding patio door with the sill track and threshold exposed along the bottom",
+  },
+  sliderThreePanel: {
+    src: "/photos/door-slider-three-panel-white.jpg",
+    alt: "A three-panel white-framed sliding patio door newly fitted into a stucco wall",
+  },
+  sliderTwoPanel: {
+    src: "/photos/door-slider-two-panel-white.jpg",
+    alt: "A two-panel white sliding patio door closed in its frame, the weatherstrip seated along the meeting stile",
+  },
+  windowGableTrusses: {
+    src: "/photos/window-gable-trusses.jpg",
+    alt: "Newly installed windows set high in a gable wall, photographed before the ceiling was closed in",
+  },
+  windowFramedWall: {
+    src: "/photos/window-framed-wall-new-build.jpg",
+    alt: "Large fixed windows and a slider set into a framed exterior wall during construction",
+  },
 } as const;
 
 export const serviceCategories: ServiceCategory[] = [
@@ -164,8 +188,8 @@ export const serviceCategories: ServiceCategory[] = [
     dek: "What most people are actually picturing when they price replacement windows, and what most houses around here end up with for good reason.",
     description:
       "Vinyl replacement windows in Lancaster County, PA. Low maintenance, good insulation value, and the frame material most replacement hardware is built around.",
-    heroImage: PHOTO.treeReflection.src,
-    heroAlt: PHOTO.treeReflection.alt,
+    heroImage: PHOTO.windowGableTrusses.src,
+    heroAlt: PHOTO.windowGableTrusses.alt,
   },
   {
     slug: "wood-clad",
@@ -192,8 +216,8 @@ export const serviceCategories: ServiceCategory[] = [
     dek: "Dimensionally the most stable of the four materials, which matters more on a big opening than a small one.",
     description:
       "Fiberglass replacement windows in Lancaster County, PA. Narrow frame profiles, excellent dimensional stability, and a paintable exterior.",
-    heroImage: PHOTO.modernHouse.src,
-    heroAlt: PHOTO.modernHouse.alt,
+    heroImage: PHOTO.windowFramedWall.src,
+    heroAlt: PHOTO.windowFramedWall.alt,
   },
   {
     slug: "aluminum",
@@ -234,8 +258,8 @@ export const serviceCategories: ServiceCategory[] = [
     dek: "The largest moving thing in most houses, riding on two small wheels and a track that has to stay dead straight.",
     description:
       "Patio and sliding door replacement in Lancaster County, PA. Full panel, track, and frame replacement with flashed sills that shed water properly.",
-    heroImage: PHOTO.whiteSlider.src,
-    heroAlt: PHOTO.whiteSlider.alt,
+    heroImage: PHOTO.sliderPairPatio.src,
+    heroAlt: PHOTO.sliderPairPatio.alt,
   },
   {
     slug: "french-doors",
@@ -320,8 +344,8 @@ export const serviceCategories: ServiceCategory[] = [
     dek: "The frame material most sliding patio door hardware is designed around, which makes parts easy to get years later.",
     description:
       "Vinyl sliding patio doors in Lancaster County, PA. Low-maintenance frames, good insulation, and hardware that stays serviceable long-term.",
-    heroImage: PHOTO.blackSlider.src,
-    heroAlt: PHOTO.blackSlider.alt,
+    heroImage: PHOTO.sliderThreePanel.src,
+    heroAlt: PHOTO.sliderThreePanel.alt,
   },
 
   // ---------- WINDOWS / REPAIR ----------
@@ -476,8 +500,8 @@ export const serviceCategories: ServiceCategory[] = [
     dek: "The full weight of a patio door rides on two small wheels. When it stops gliding, that is almost always what you are feeling.",
     description:
       "Sliding patio door roller and track repair in Lancaster County, PA. Flat-spotted rollers, packed and bent tracks, and doors off their track.",
-    heroImage: PHOTO.whiteSlider.src,
-    heroAlt: PHOTO.whiteSlider.alt,
+    heroImage: PHOTO.sliderTrack.src,
+    heroAlt: PHOTO.sliderTrack.alt,
   },
   {
     slug: "door-glass",
@@ -545,8 +569,8 @@ export const serviceCategories: ServiceCategory[] = [
     dek: "Most adjustable thresholds have screws that raise the sill back against the sweep, and most homeowners never know they are there.",
     description:
       "Door draft and weatherstripping repair in Lancaster County, PA. Sweeps, adjustable thresholds, and perimeter seals reset so the door seals again.",
-    heroImage: PHOTO.finishedExterior.src,
-    heroAlt: PHOTO.finishedExterior.alt,
+    heroImage: PHOTO.sliderTwoPanel.src,
+    heroAlt: PHOTO.sliderTwoPanel.alt,
   },
 ];
 
