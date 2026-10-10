@@ -46,15 +46,23 @@ const businessSchema = {
   name: site.name,
   url: site.url,
   telephone: site.phoneHref.replace("tel:", ""),
+  email: site.email,
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "07:00",
+    closes: "18:00",
+  },
   logo: `${site.url}/logo-real.png`,
   image: `${site.url}/og.jpg`,
   description:
     "Window and door replacement and repair for homes in Lancaster County, PA and neighboring counties.",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "East Earl",
-    addressRegion: "PA",
-    postalCode: "17519",
+    streetAddress: site.address.street,
+    addressLocality: site.address.city,
+    addressRegion: site.address.region,
+    postalCode: site.address.zip,
     addressCountry: "US",
   },
   areaServed: counties.map((c) => ({
@@ -89,7 +97,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </Script>
         <script
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
         />
         <Header />

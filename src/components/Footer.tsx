@@ -51,6 +51,12 @@ export function Footer() {
           <ul className="space-y-2 text-sm text-white/80">
             <li><a href={site.phoneHref} className="hover:text-gold font-sans">{site.phoneDisplay}</a></li>
             <li><a href={`mailto:${site.email}`} className="hover:text-gold">{site.email}</a></li>
+            <li className="text-white/60">
+              {site.address.street}
+              <br />
+              {site.address.city}, {site.address.region} {site.address.zip}
+            </li>
+            <li className="text-white/60">{site.hoursDisplay}</li>
             <li className="text-white/60">{site.license}</li>
           </ul>
           <Link

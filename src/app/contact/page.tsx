@@ -31,9 +31,20 @@ export default function ContactPage() {
             <span className="text-gold w-16 shrink-0">Email</span>
             <a href={`mailto:${site.email}`} className="hover:text-gold break-all">{site.email}</a>
           </div>
+          <div className="flex gap-4 border-t border-line pt-4">
+            <span className="text-gold w-16 shrink-0">Address</span>
+            <span>
+              {site.address.street}, {site.address.city}, {site.address.region}{" "}
+              {site.address.zip}
+            </span>
+          </div>
+          <div className="flex gap-4 border-t border-line pt-4">
+            <span className="text-gold w-16 shrink-0">Hours</span>
+            <span>{site.hoursDisplay}, closed Sunday</span>
+          </div>
           <div className="flex gap-4 border-t border-line pt-4 border-b pb-4">
             <span className="text-gold w-16 shrink-0">Area</span>
-            <span>{site.serviceCounty}, based in {site.baseTown}</span>
+            <span>{site.serviceCounty} and five neighboring counties</span>
           </div>
         </div>
       </div>
