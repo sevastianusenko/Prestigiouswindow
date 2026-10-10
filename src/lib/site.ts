@@ -6,9 +6,8 @@ export const site = {
   // Canonical origin. The apex 308-redirects to www, so www is the real home —
   // metadata, sitemap and robots must all agree on this one.
   url: "https://www.prestigiouswindowsdoors.com",
-  // Placeholder — 555 exchange is reserved for fiction, replace before launch.
-  phoneDisplay: "(717) 555-0142",
-  phoneHref: "tel:+17175550142",
+  phoneDisplay: "(717) 679-1989",
+  phoneHref: "tel:+17176791989",
   email: "hello@prestigiouswindowsdoors.com",
   license: "PA HIC #PA227671",
   serviceCounty: "Lancaster County, PA",
