@@ -10,8 +10,7 @@ export const site = {
   phoneDisplay: "(717) 555-0142",
   phoneHref: "tel:+17175550142",
   email: "hello@prestigiouswindowsdoors.com",
-  // Placeholder license number — replace with the real PA HIC registration before launch.
-  license: "PA HIC #PA000000",
+  license: "PA HIC #PA227671",
   serviceCounty: "Lancaster County, PA",
   baseTown: "East Earl, PA",
 };
