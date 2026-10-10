@@ -22,7 +22,8 @@ export async function generateMetadata(
   const county = getCounty(slug);
   if (!county) return {};
   return {
-    title: `Windows & Doors in ${county.name}, PA`,
+    title: `Window & Door Replacement in ${county.name}, PA`,
+    alternates: { canonical: `/service-area/county/${slug}` },
     description: `Window and door replacement and repair across ${county.name}, PA. ${county.blurb}`,
   };
 }

@@ -20,6 +20,7 @@ export async function generateMetadata(
   return {
     title: post.title,
     description: post.description,
+    alternates: { canonical: `/blog/${slug}` },
   };
 }
 
@@ -36,8 +37,8 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
     description: post.description,
     datePublished: post.date,
     dateModified: post.date,
-    author: { "@type": "Organization", name: site.name },
-    publisher: { "@type": "Organization", name: site.name },
+    author: { "@type": "Organization", "@id": `${site.url}/#business`, name: site.name },
+    publisher: { "@type": "Organization", "@id": `${site.url}/#business`, name: site.name },
   };
 
   return (

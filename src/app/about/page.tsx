@@ -6,6 +6,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
+  alternates: { canonical: "/about" },
   description: `${site.name} — licensed and insured window and door replacement and repair, based in ${site.baseTown}.`,
 };
 

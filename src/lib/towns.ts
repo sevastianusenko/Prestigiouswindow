@@ -96,6 +96,150 @@ export const towns: Town[] = [
     minutesFromBase: 9,
   },
 
+  {
+    slug: "ephrata",
+    name: "Ephrata",
+    county: "Lancaster County",
+    countySlug: "lancaster",
+    character:
+      "the largest borough in northern Lancaster County, with a National Register-listed downtown along Main Street and the colonial-era Ephrata Cloister a short walk away.",
+    blurb:
+      "Ephrata's older neighborhoods near Main Street often have openings that have already been through one round of replacements, not always done well, so a lot of our work here is correcting the fit as much as upgrading the window.",
+    focus: "windows",
+    minutesFromBase: 19,
+  },
+  {
+    slug: "leola",
+    name: "Leola",
+    county: "Lancaster County",
+    countySlug: "lancaster",
+    character:
+      "a sizable unincorporated community along Route 23, where 19th-century farmhouses and older Main Street homes sit alongside plenty of newer construction.",
+    blurb:
+      "Leola's mix means one week we're fitting replacements into uneven farmhouse openings and the next we're upgrading builder-grade windows in a newer neighborhood, plus plenty of street-facing entry doors that have taken a beating.",
+    focus: "both",
+    minutesFromBase: 19,
+  },
+  {
+    slug: "denver",
+    name: "Denver",
+    county: "Lancaster County",
+    countySlug: "lancaster",
+    character:
+      "a compact borough in the Cocalico valley that grew up around a rail stop, cigar shops and a hat factory, with newer neighborhoods spreading out past the older core.",
+    blurb:
+      "Denver's older homes near the center pair hand-framed window openings with entry doors that have settled for a century, so we measure on site and treat each door as its own repair-or-replace decision.",
+    focus: "both",
+    minutesFromBase: 27,
+  },
+  {
+    slug: "lititz",
+    name: "Lititz",
+    county: "Lancaster County",
+    countySlug: "lancaster",
+    character:
+      "a Moravian church town turned Main Street borough, with an 18th- and 19th-century historic core ringed by 20th-century neighborhoods.",
+    blurb:
+      "Lititz's Moravian historic district holds houses framed two centuries apart on the same block, none of them to a standard size — so every opening here gets measured on site, whether it's a sash worth repairing or a builder-grade unit on the edge of town.",
+    focus: "windows",
+    minutesFromBase: 29,
+  },
+  {
+    slug: "lancaster",
+    name: "Lancaster",
+    county: "Lancaster County",
+    countySlug: "lancaster",
+    character:
+      "the county seat and the Red Rose City, briefly the nation's capital in 1777, with a National Register historic district of more than 13,000 buildings, most built between 1860 and 1930.",
+    blurb:
+      "Lancaster's rowhomes and twins were mostly built before window sizes were standardized, so window replacement in Lancaster, PA starts with measuring every opening on site, and with checking whether the house falls inside the city's HARB-reviewed historic district.",
+    focus: "both",
+    minutesFromBase: 35,
+  },
+  {
+    slug: "strasburg",
+    name: "Strasburg",
+    county: "Lancaster County",
+    countySlug: "lancaster",
+    character:
+      "the self-styled \"Train Town USA,\" a Conestoga Road borough whose National Register historic district still holds log, brick and stone houses from before 1815.",
+    blurb:
+      "Strasburg's historic district is full of hand-framed openings in log, brick and limestone walls, the kind of houses where measuring every opening on site, and often repairing original sash, matters more than anywhere else on our list.",
+    focus: "windows",
+    minutesFromBase: 36,
+  },
+  {
+    slug: "manheim",
+    name: "Manheim",
+    county: "Lancaster County",
+    countySlug: "lancaster",
+    character:
+      "a borough laid out by glassmaker Henry William Stiegel in 1762, now mostly Italianate and Victorian homes from its 1860–1930 railroad years.",
+    blurb:
+      "Manheim's historic district is mostly Victorian-era houses with tall, narrow windows and entry doors with transoms, details a careless stock replacement erases fast — so we measure to the opening and look at repair first.",
+    focus: "both",
+    minutesFromBase: 39,
+  },
+  {
+    slug: "mount-joy",
+    name: "Mount Joy",
+    county: "Lancaster County",
+    countySlug: "lancaster",
+    character:
+      "a working borough formed in 1851 from two villages, with a pre-1939 downtown around Main and Market Streets and newer development on its outskirts.",
+    blurb:
+      "Mount Joy splits cleanly between an older downtown, where original openings and well-worn entry doors are the norm, and newer neighborhoods where builder-grade windows are now old enough to fog at the seal.",
+    focus: "both",
+    minutesFromBase: 43,
+  },
+  {
+    slug: "millersville",
+    name: "Millersville",
+    county: "Lancaster County",
+    countySlug: "lancaster",
+    character:
+      "a college town just southwest of Lancaster city, founded in 1761 around John Miller's blacksmith shop and shaped since 1855 by the normal school that became Millersville University.",
+    blurb:
+      "Millersville mixes older homes near the old village core with newer single-family streets and plenty of rentals, so the work here runs from careful old-opening replacements to straightforward door and sash repairs between tenants.",
+    focus: "both",
+    minutesFromBase: 44,
+  },
+  {
+    slug: "columbia",
+    name: "Columbia",
+    county: "Lancaster County",
+    countySlug: "lancaster",
+    character:
+      "a Susquehanna River borough that began as Wright's Ferry in 1726, came within a single vote of becoming the national capital, and grew up as a canal, rail and iron town.",
+    blurb:
+      "Columbia's National Register historic district counts more than 800 contributing buildings, mostly Late Victorian, which means original wood sash, hand-framed openings, and a borough review board for street-facing exterior changes.",
+    focus: "windows",
+    minutesFromBase: 45,
+  },
+  {
+    slug: "quarryville",
+    name: "Quarryville",
+    county: "Lancaster County",
+    countySlug: "lancaster",
+    character:
+      "a former limestone-quarry town in southern Lancaster County, once called Barr's Quarries, with a late-1800s center surrounded by newer homes.",
+    blurb:
+      "Quarryville mixes century-old houses near the center, with painted-shut sash and settled door frames, and newer builder-grade homes at the edges, so the work here splits about evenly between repair and replacement.",
+    focus: "both",
+    minutesFromBase: 49,
+  },
+  {
+    slug: "elizabethtown",
+    name: "Elizabethtown",
+    county: "Lancaster County",
+    countySlug: "lancaster",
+    character:
+      "a college and railroad borough at the county's western edge, laid out in 1753, with an older core ringed by a large wave of postwar housing.",
+    blurb:
+      "Elizabethtown's homes run from its original 18th-century lots through factory-era houses to the postwar neighborhoods that more than doubled the town's size, so we see everything from sticking wood sash to failed first-generation insulated glass.",
+    focus: "both",
+    minutesFromBase: 53,
+  },
   // ---- Berks County ----
   {
     slug: "morgantown",

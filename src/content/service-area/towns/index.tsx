@@ -5,6 +5,18 @@ import NewHolland from "./new-holland";
 import TerreHill from "./terre-hill";
 import Goodville from "./goodville";
 import Bowmansville from "./bowmansville";
+import Ephrata from "./ephrata";
+import Leola from "./leola";
+import Denver from "./denver";
+import Lititz from "./lititz";
+import Lancaster from "./lancaster";
+import Strasburg from "./strasburg";
+import Manheim from "./manheim";
+import MountJoy from "./mount-joy";
+import Millersville from "./millersville";
+import Columbia from "./columbia";
+import Quarryville from "./quarryville";
+import Elizabethtown from "./elizabethtown";
 import Morgantown from "./morgantown";
 import NewMorgan from "./new-morgan";
 import Geigertown from "./geigertown";
@@ -39,6 +51,18 @@ export const townContentMap: Record<string, ComponentType> = {
   "terre-hill": TerreHill,
   goodville: Goodville,
   bowmansville: Bowmansville,
+  ephrata: Ephrata,
+  leola: Leola,
+  denver: Denver,
+  lititz: Lititz,
+  lancaster: Lancaster,
+  strasburg: Strasburg,
+  manheim: Manheim,
+  "mount-joy": MountJoy,
+  millersville: Millersville,
+  columbia: Columbia,
+  quarryville: Quarryville,
+  elizabethtown: Elizabethtown,
   morgantown: Morgantown,
   "new-morgan": NewMorgan,
   geigertown: Geigertown,

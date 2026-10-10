@@ -17,7 +17,7 @@ export default function Content() {
         that starts from a different premise.
       </p>
 
-      <h2>What a "gas refill" service actually leaves you with</h2>
+      <h2>What a &ldquo;gas refill&rdquo; service actually leaves you with</h2>
       <p>
         Some companies offer a gas recharge as a standalone service, usually
         drilling a small hole into the unit, injecting gas, and sealing the

@@ -27,7 +27,8 @@ export async function generateMetadata(
   const town = getTown(slug);
   if (!town) return {};
   return {
-    title: `Windows & Doors in ${town.name}, PA`,
+    title: `Window & Door Replacement in ${town.name}, PA`,
+    alternates: { canonical: `/service-area/${slug}` },
     description: `Window and door replacement and repair in ${town.name}, PA. ${town.blurb}`,
   };
 }

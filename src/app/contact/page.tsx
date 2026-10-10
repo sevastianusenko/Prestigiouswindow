@@ -5,6 +5,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Get a Quote",
+  alternates: { canonical: "/contact" },
   description: `Request a free, on-site window or door quote in ${site.serviceCounty}.`,
 };
 

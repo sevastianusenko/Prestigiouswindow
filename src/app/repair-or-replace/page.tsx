@@ -6,6 +6,7 @@ import { ButtonLink } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Repair or Replace?",
+  alternates: { canonical: "/repair-or-replace" },
   description:
     "A straight answer on whether your windows or doors need repair or full replacement — before you get a quote for either.",
 };

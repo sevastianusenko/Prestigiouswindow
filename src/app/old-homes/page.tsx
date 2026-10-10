@@ -6,6 +6,7 @@ import { QuoteForm } from "@/components/QuoteForm";
 
 export const metadata: Metadata = {
   title: "Windows & Doors for Older Homes",
+  alternates: { canonical: "/old-homes" },
   description:
     "Window and door work on older Lancaster County homes — restoration where it makes sense, replacement that respects the original opening.",
 };

@@ -12,7 +12,8 @@ import { getCategoriesFor } from "@/lib/services";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Door Replacement",
+  title: "Door Replacement in Lancaster County, PA",
+  alternates: { canonical: "/doors/replacement" },
   description:
     "Entry, patio, sliding, French, and storm door replacement in Lancaster County, PA — fiberglass, steel, wood, and vinyl, fitted and hung by a licensed local crew.",
 };

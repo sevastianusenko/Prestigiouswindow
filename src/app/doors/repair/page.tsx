@@ -9,7 +9,8 @@ import { Faq } from "@/components/ui/Faq";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Door Repair",
+  title: "Door Repair in Lancaster County, PA",
+  alternates: { canonical: "/doors/repair" },
   description:
     "Door repair in Lancaster County, PA — sticking doors, rotted jambs, cracked glass panels, sliding door rollers, and storm door hardware.",
 };

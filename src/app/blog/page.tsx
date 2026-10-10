@@ -7,6 +7,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Blog",
+  alternates: { canonical: "/blog" },
   description: `Straight answers on window and door repair and replacement, from ${site.name} in ${site.serviceCounty}.`,
 };
 

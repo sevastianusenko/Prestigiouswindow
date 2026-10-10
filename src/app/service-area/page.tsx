@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Eyebrow, SectionHeading, Divider } from "@/components/ui/Type";
-import { coreTowns } from "@/lib/towns";
+import { coreTowns, towns } from "@/lib/towns";
 import { counties } from "@/lib/counties";
 import { getTownsByCounty } from "@/lib/towns";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Service Area",
+  title: "Service Area: Lancaster County & 5 Neighboring Counties",
+  alternates: { canonical: "/service-area" },
   description: `Windows and doors, serving ${site.serviceCounty} and five neighboring counties from our base in ${site.baseTown}.`,
 };
 
@@ -58,7 +59,7 @@ export default function ServiceAreaPage() {
       <section className="mx-auto max-w-7xl px-5 sm:px-8 py-16 sm:py-20">
         <Eyebrow>The full service area</Eyebrow>
         <SectionHeading as="h2" className="text-2xl sm:text-3xl max-w-xl">
-          Six counties, thirty towns
+          Six counties, {towns.length} towns
         </SectionHeading>
         <p className="mt-4 text-ink/70 max-w-2xl">
           Every county below has its own page with real drive times and what

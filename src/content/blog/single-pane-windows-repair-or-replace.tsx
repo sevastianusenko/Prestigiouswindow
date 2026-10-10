@@ -55,7 +55,7 @@ export default function Content() {
         cleaning out the rabbet it sits in, bedding the glass in fresh
         putty, and letting it cure properly before painting. It is slow
         work done by hand, but it is not expensive, and it restores the
-        pane's grip on the sash so the glass is not rattling or leaking air
+        pane&apos;s grip on the sash so the glass is not rattling or leaking air
         around its own edges.
       </p>
 

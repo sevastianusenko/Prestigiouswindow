@@ -12,7 +12,8 @@ import { getCategoriesFor } from "@/lib/services";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Window Replacement",
+  title: "Window Replacement in Lancaster County, PA",
+  alternates: { canonical: "/windows/replacement" },
   description:
     "Full window replacement in Lancaster County, PA — vinyl, wood, fiberglass, and aluminum windows, double-hung, casement, bay, and egress, measured and installed by a licensed local crew.",
 };

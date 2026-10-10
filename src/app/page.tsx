@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Eyebrow, SectionHeading, Divider } from "@/components/ui/Type";
@@ -7,6 +8,10 @@ import { BrandMark } from "@/components/BrandMark";
 import { site } from "@/lib/site";
 import { counties } from "@/lib/counties";
 import { getTownsByCounty } from "@/lib/towns";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const stages = [
   {
@@ -163,14 +168,14 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-5 sm:px-8 w-full">
             <div className="max-w-xl">
               <h1 className="reveal font-display font-bold uppercase text-balance leading-[1.05] text-white text-4xl sm:text-5xl lg:text-6xl">
-                Trust your home to Prestigious Windows &amp; Doors
+                Window &amp; door replacement in Lancaster County
               </h1>
               <p
                 className="reveal mt-5 text-lg text-white/90 max-w-md"
                 style={{ animationDelay: "120ms" }}
               >
-                High-quality windows and doors, installed and repaired by a
-                licensed local crew. Based in {site.baseTown}, serving{" "}
+                {site.name}: high-quality windows and doors, installed and
+                repaired by a licensed local crew. Based in {site.baseTown}, serving{" "}
                 {site.serviceCounty}.
               </p>
               <div

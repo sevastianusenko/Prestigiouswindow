@@ -16,7 +16,11 @@ export async function generateMetadata(
   const { category: slug } = await props.params;
   const category = getCategory(PARENT, slug);
   if (!category) return {};
-  return { title: category.h1, description: category.description };
+  return {
+    title: `${category.h1} in Lancaster County, PA`,
+    description: category.description,
+    alternates: { canonical: `/doors/replacement/${slug}` },
+  };
 }
 
 export default async function Page(

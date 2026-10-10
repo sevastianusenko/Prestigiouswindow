@@ -9,7 +9,8 @@ import { Faq } from "@/components/ui/Faq";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Window Repair",
+  title: "Window Repair in Lancaster County, PA",
+  alternates: { canonical: "/windows/repair" },
   description:
     "Window repair in Lancaster County, PA — fogged glass, cracked panes, failed seals, sash balances, screens, and storm windows. We fix what's fixable instead of defaulting to replacement.",
 };
