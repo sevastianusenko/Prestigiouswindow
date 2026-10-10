@@ -63,18 +63,30 @@ body {
   animation: reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Scroll-reveal system: elements marked .reveal-item stay fully visible
-   by default (no JS, or JS not yet ready = normal static page). Only
-   once RevealObserver has mounted does it stamp .js-anim on <html>
-   (see layout.tsx beforeInteractive script) and start observing —
-   from that point, items animate in the moment they enter view instead
-   of appearing pre-hidden. This avoids any flash-of-invisible-content
-   and degrades to a plain static page if JS fails. */
+/* Scroll-reveal system. The beforeInteractive script in layout.tsx stamps
+   .js-anim on <html> before first paint, so .reveal-item elements start
+   hidden and RevealObserver fades them in as they enter view. Without JS
+   at all, .js-anim never appears and the page is plain and static.
+
+   If the app is slow to hydrate (or its JS fails after the inline script
+   ran), the items would sit invisible — so until RevealObserver marks
+   <html> .reveal-ready, a delayed animation shows them anyway. */
 .js-anim .reveal-item {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js-anim:not(.reveal-ready) .reveal-item {
+  animation: reveal-fallback 0.5s ease-out 2.5s forwards;
+}
+
+@keyframes reveal-fallback {
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .js-anim .reveal-item.in-view {
