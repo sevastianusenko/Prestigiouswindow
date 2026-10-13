@@ -58,6 +58,14 @@ export function Footer() {
             </li>
             <li className="text-white/60">{site.hoursDisplay}</li>
             <li className="text-white/60">{site.license}</li>
+            <li className="flex gap-4 pt-1">
+              <a href={site.social.facebook} target="_blank" rel="noopener" className="hover:text-gold">
+                Facebook
+              </a>
+              <a href={site.social.houzz} target="_blank" rel="noopener" className="hover:text-gold">
+                Houzz
+              </a>
+            </li>
           </ul>
           <Link
             href="/contact"

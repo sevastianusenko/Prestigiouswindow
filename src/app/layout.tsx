@@ -74,6 +74,7 @@ const businessSchema = {
     credentialCategory: "Pennsylvania Home Improvement Contractor Registration",
     identifier: site.license.replace("PA HIC #", ""),
   },
+  sameAs: Object.values(site.social),
   knowsAbout: [
     "Window replacement",
     "Window repair",
