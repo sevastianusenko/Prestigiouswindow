@@ -16,10 +16,18 @@ export const site = {
     zip: "17519",
   },
   hoursDisplay: "Mon–Sat 7am–6pm",
-  // Official profiles — also emitted as schema sameAs so Google ties them to the business.
+  // Official profiles — all emitted as schema sameAs so Google ties them to the business.
+  // `social` ones also get footer icons; `listings` are schema-only.
   social: {
     facebook: "https://www.facebook.com/profile.php?id=61595134870132",
     houzz: "https://www.houzz.com/pro/webuser-373924482/prestigious-windows-and-doors",
+    nextdoor: "https://nextdoor.com/pages/prestigious-windows-doors-east-earl-pa/",
+    provenexpert: "https://www.provenexpert.com/en-us/prestigious-windows-doors/",
+  },
+  listings: {
+    manta: "https://www.manta.com/c/m1h3ldc/prestigious-windows-doors",
+    alignable: "https://www.alignable.com/east-earl-pa/prestigious-windows-doors",
+    brownbook: "https://www.brownbook.net/business/55588378/prestigious-windows-doors",
   },
   license: "PA HIC #PA227671",
   serviceCounty: "Lancaster County, PA",

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { SocialIcons } from "./SocialIcons";
 import { coreTowns } from "@/lib/towns";
 import { site } from "@/lib/site";
 
@@ -58,15 +59,10 @@ export function Footer() {
             </li>
             <li className="text-white/60">{site.hoursDisplay}</li>
             <li className="text-white/60">{site.license}</li>
-            <li className="flex gap-4 pt-1">
-              <a href={site.social.facebook} target="_blank" rel="noopener" className="hover:text-gold">
-                Facebook
-              </a>
-              <a href={site.social.houzz} target="_blank" rel="noopener" className="hover:text-gold">
-                Houzz
-              </a>
-            </li>
           </ul>
+          <div className="mt-5">
+            <SocialIcons />
+          </div>
           <Link
             href="/contact"
             className="inline-block mt-4 rounded-full border-2 border-gold text-gold px-5 py-2.5 text-sm font-semibold hover:bg-gold hover:text-ink transition-colors"
