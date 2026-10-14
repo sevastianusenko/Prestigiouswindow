@@ -188,6 +188,114 @@ export const posts: BlogPost[] = [
       "A pale yellow colonial-style house with blue shutters and three dormer windows in the roofline",
     keywords: ["attic window replacement"],
   },
+  {
+    slug: "choosing-a-window-door-contractor",
+    title: "How to Choose a Window and Door Contractor in Lancaster County",
+    dek: "Registration, reviews, who actually does the install, and the pressure tactics worth walking away from.",
+    description:
+      "A practical checklist for choosing a window or door contractor in Lancaster County, PA: HIC registration, reviews, written quotes, deposits and lead-safe work.",
+    date: "2026-10-13",
+    readMinutes: 8,
+    heroImage: "/photos/window-arched-shutters.jpg",
+    heroAlt: "Large black-framed sliding glass doors set in a house under construction",
+    keywords: [
+      "window contractor lancaster pa",
+      "how to choose a window installer",
+      "window replacement company near me",
+    ],
+  },
+  {
+    slug: "window-condensation-ice-inside-winter",
+    title: "Condensation and Ice on the Inside of Windows: What It Means",
+    dek: "Where the water sits tells you whether it's the house, the window, or both.",
+    description:
+      "Why windows sweat or ice up on the inside in winter, how to tell humidity from a failed seal, and what to try before replacing anything.",
+    date: "2026-10-13",
+    readMinutes: 7,
+    heroImage: "/photos/window-green-shutters.jpg",
+    heroAlt: "A stucco Tudor-style house with green shutters and steep gables",
+    keywords: [
+      "condensation on inside of windows",
+      "ice on inside of windows",
+      "window condensation winter",
+    ],
+  },
+  {
+    slug: "replacing-windows-in-winter",
+    title: "Can You Replace Windows in Winter? Yes, and Here's How It Works",
+    dek: "One opening at a time, cold-rated sealants, and why the off-season can be the easier time to do it.",
+    description:
+      "How window and door replacement works in cold weather, what changes in winter, and why it can be a better time to schedule than spring.",
+    date: "2026-10-13",
+    readMinutes: 7,
+    heroImage: "/photos/hero-farmhouse-autumn.webp",
+    heroAlt: "A two-story colonial-style house with dormers and fall decorations on the porch",
+    keywords: [
+      "replacing windows in winter",
+      "can windows be installed in cold weather",
+      "winter window installation",
+    ],
+  },
+  {
+    slug: "entry-door-materials-steel-fiberglass-wood",
+    title: "Steel vs. Fiberglass vs. Wood Entry Doors: Which Holds Up Best?",
+    dek: "How the three compare after a few Pennsylvania winters, and why the frame matters as much as the slab.",
+    description:
+      "An honest comparison of steel, fiberglass and wood front doors: cost, maintenance, insulation, weather exposure, and which to choose for your entry.",
+    date: "2026-10-13",
+    readMinutes: 8,
+    heroImage: "/photos/door-black-hardware.jpg",
+    heroAlt: "A white entry door with a full-length glass panel",
+    keywords: [
+      "steel vs fiberglass entry door",
+      "best front door material",
+      "fiberglass vs wood door",
+    ],
+  },
+  {
+    slug: "storm-doors-worth-it",
+    title: "Are Storm Doors Worth It? When They Help and When They Hurt",
+    dek: "Great on an exposed wood door, risky on a full-sun entry. Here's how to tell which one you have.",
+    description:
+      "What a storm door actually does, the heat-buildup problem on sunny entries, the main styles, and when repairing your existing storm door makes more sense.",
+    date: "2026-10-13",
+    readMinutes: 7,
+    heroImage: "/photos/door-porch-white.jpg",
+    heroAlt: "A white front door on a covered porch",
+    keywords: ["are storm doors worth it", "storm door installation", "storm door heat damage"],
+  },
+  {
+    slug: "insert-vs-full-frame-window-replacement",
+    title: "Insert vs. Full-Frame Window Replacement: Which Does Your House Need?",
+    dek: "Why two quotes for the same windows can be so far apart, and how to tell which method fits each opening.",
+    description:
+      "The difference between insert (pocket) and full-frame window replacement, the pros and cons of each, and when an old frame can't be trusted.",
+    date: "2026-10-13",
+    readMinutes: 8,
+    heroImage: "/photos/process-rough-opening.jpg",
+    heroAlt: "A large rough opening in a block wall before the new unit is installed",
+    keywords: [
+      "insert vs full frame window replacement",
+      "pocket window replacement",
+      "full frame window replacement",
+    ],
+  },
+  {
+    slug: "do-new-windows-increase-home-value",
+    title: "Do New Windows Increase Home Value? A Straight Answer",
+    dek: "What comes back at resale, what doesn't, and what to fix if you're listing soon.",
+    description:
+      "How much new windows and doors add to resale value, what to repair before selling, and which upgrades buyers actually notice.",
+    date: "2026-10-13",
+    readMinutes: 7,
+    heroImage: "/photos/house-multi-gable-blue.jpg",
+    heroAlt: "A multi-gabled house with blue siding and many windows",
+    keywords: [
+      "do new windows increase home value",
+      "replace windows before selling",
+      "window replacement resale value",
+    ],
+  },
 ];
 
 export function getPost(slug: string): BlogPost | undefined {

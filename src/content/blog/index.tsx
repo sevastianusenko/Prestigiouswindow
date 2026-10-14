@@ -11,6 +11,13 @@ import WindowScreensCasingsSmallJobs from "./window-screens-casings-small-jobs";
 import PatioSlidingDoorRepair from "./patio-sliding-door-repair";
 import GasFilledWindowPanesExplained from "./gas-filled-window-panes-explained";
 import AtticWindowReplacement from "./attic-window-replacement";
+import ChoosingAWindowDoorContractor from "./choosing-a-window-door-contractor";
+import WindowCondensationIceInsideWinter from "./window-condensation-ice-inside-winter";
+import ReplacingWindowsInWinter from "./replacing-windows-in-winter";
+import EntryDoorMaterialsSteelFiberglassWood from "./entry-door-materials-steel-fiberglass-wood";
+import StormDoorsWorthIt from "./storm-doors-worth-it";
+import InsertVsFullFrameWindowReplacement from "./insert-vs-full-frame-window-replacement";
+import DoNewWindowsIncreaseHomeValue from "./do-new-windows-increase-home-value";
 
 export const contentMap: Record<string, ComponentType> = {
   "house-window-repair-guide": HouseWindowRepairGuide,
@@ -25,4 +32,11 @@ export const contentMap: Record<string, ComponentType> = {
   "patio-sliding-door-repair": PatioSlidingDoorRepair,
   "gas-filled-window-panes-explained": GasFilledWindowPanesExplained,
   "attic-window-replacement": AtticWindowReplacement,
+  "choosing-a-window-door-contractor": ChoosingAWindowDoorContractor,
+  "window-condensation-ice-inside-winter": WindowCondensationIceInsideWinter,
+  "replacing-windows-in-winter": ReplacingWindowsInWinter,
+  "entry-door-materials-steel-fiberglass-wood": EntryDoorMaterialsSteelFiberglassWood,
+  "storm-doors-worth-it": StormDoorsWorthIt,
+  "insert-vs-full-frame-window-replacement": InsertVsFullFrameWindowReplacement,
+  "do-new-windows-increase-home-value": DoNewWindowsIncreaseHomeValue,
 };
