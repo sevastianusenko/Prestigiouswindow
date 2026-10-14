@@ -9,6 +9,9 @@ import { towns, getTown, getTownsByCounty } from "@/lib/towns";
 import { getCounty } from "@/lib/counties";
 import { site } from "@/lib/site";
 import { townContentMap } from "@/content/service-area/towns";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/JsonLd";
+import { RelatedPosts } from "@/components/RelatedPosts";
 
 const photoByFocus = {
   windows: "/photos/window-double-hung.jpg",
@@ -26,12 +29,38 @@ export async function generateMetadata(
   const { town: slug } = await props.params;
   const town = getTown(slug);
   if (!town) return {};
+  const distance =
+    town.minutesFromBase === 0
+      ? "right where we're based"
+      : `${town.minutesFromBase} minutes from East Earl`;
   return {
     title: `Window & Door Replacement in ${town.name}, PA`,
     alternates: { canonical: `/service-area/${slug}` },
-    description: `Window and door replacement and repair in ${town.name}, PA. ${town.blurb}`,
+    description: `Window and door replacement and repair in ${town.name}, PA, ${distance}. Measured in person, installed by the same licensed crew. Free estimates.`,
   };
 }
+
+// Posts most likely to answer the question someone in this town arrived with.
+const postsByFocus = {
+  windows: [
+    "window-cost-guide",
+    "replacing-windows-in-an-old-house",
+    "insert-vs-full-frame-window-replacement",
+    "foggy-window-seal-repair",
+  ],
+  doors: [
+    "patio-sliding-door-repair",
+    "entry-door-materials-steel-fiberglass-wood",
+    "storm-doors-worth-it",
+    "choosing-a-window-door-contractor",
+  ],
+  both: [
+    "choosing-a-window-door-contractor",
+    "replacing-windows-in-an-old-house",
+    "window-cost-guide",
+    "entry-door-materials-steel-fiberglass-wood",
+  ],
+} as const;
 
 export default async function TownPage(props: PageProps<"/service-area/[town]">) {
   const { town: slug } = await props.params;
@@ -41,9 +70,26 @@ export default async function TownPage(props: PageProps<"/service-area/[town]">)
   const others = getTownsByCounty(town.countySlug).filter((t) => t.slug !== town.slug);
   const county = getCounty(town.countySlug);
   const Content = townContentMap[town.slug];
+  const path = `/service-area/${town.slug}`;
 
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Service Area", path: "/service-area" },
+            ...(county
+              ? [{ name: county.name, path: `/service-area/county/${county.slug}` }]
+              : []),
+            { name: `${town.name}, PA`, path },
+          ]),
+          serviceSchema({
+            name: `Window & Door Replacement in ${town.name}, PA`,
+            path,
+            area: { type: "City", name: `${town.name}, PA` },
+          }),
+        ]}
+      />
       <section className="mx-auto max-w-7xl px-5 sm:px-8 pt-14 sm:pt-20 pb-16 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div>
           <Eyebrow>{town.county} · {town.minutesFromBase} min from East Earl</Eyebrow>
@@ -129,8 +175,18 @@ export default async function TownPage(props: PageProps<"/service-area/[town]">)
               {t.name}, PA →
             </Link>
           ))}
+          {county && (
+            <Link
+              href={`/service-area/county/${county.slug}`}
+              className="text-ink/60 hover:text-gold"
+            >
+              All of {county.name} →
+            </Link>
+          )}
         </div>
       </section>
+
+      <RelatedPosts slugs={[...postsByFocus[town.focus]]} />
     </>
   );
 }

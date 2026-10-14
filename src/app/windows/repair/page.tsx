@@ -7,12 +7,15 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { TrustBar } from "@/components/TrustBar";
 import { Faq } from "@/components/ui/Faq";
 import { site } from "@/lib/site";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/JsonLd";
+import { RelatedPosts } from "@/components/RelatedPosts";
 
 export const metadata: Metadata = {
   title: "Window Repair in Lancaster County, PA",
   alternates: { canonical: "/windows/repair" },
   description:
-    "Window repair in Lancaster County, PA — fogged glass, cracked panes, failed seals, sash balances, screens, and storm windows. We fix what's fixable instead of defaulting to replacement.",
+    "Window repair in Lancaster County, PA: fogged glass, cracked panes, sash balances and screens. We fix what's fixable before suggesting replacement.",
 };
 
 const repairs = [
@@ -157,6 +160,12 @@ const faqs = [
 export default function WindowRepairPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([{ name: "Window Repair", path: "/windows/repair" }]),
+          serviceSchema({ name: "Window Repair", path: "/windows/repair", description: metadata.description as string }),
+        ]}
+      />
       <section className="mx-auto max-w-7xl px-5 sm:px-8 pt-14 sm:pt-20 pb-16 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div>
           <Eyebrow>Windows / Repair</Eyebrow>
@@ -361,6 +370,13 @@ export default function WindowRepairPage() {
         </SectionHeading>
         <Faq items={faqs} />
       </section>
+
+      <RelatedPosts slugs={[
+          "foggy-window-seal-repair",
+          "window-wont-stay-up-balance-repair",
+          "cracked-window-glass-repair-cost",
+          "window-condensation-ice-inside-winter",
+        ]} />
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8 pb-20">
         <p className="text-xs text-ink/50">{site.license} · {site.serviceCounty}</p>

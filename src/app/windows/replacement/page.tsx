@@ -10,12 +10,15 @@ import { Faq } from "@/components/ui/Faq";
 import { WindowIcon, CasementIcon, BayIcon, EgressIcon } from "@/components/Icons";
 import { getCategoriesFor } from "@/lib/services";
 import { site } from "@/lib/site";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/JsonLd";
+import { RelatedPosts } from "@/components/RelatedPosts";
 
 export const metadata: Metadata = {
   title: "Window Replacement in Lancaster County, PA",
   alternates: { canonical: "/windows/replacement" },
   description:
-    "Full window replacement in Lancaster County, PA — vinyl, wood, fiberglass, and aluminum windows, double-hung, casement, bay, and egress, measured and installed by a licensed local crew.",
+    "Window replacement in Lancaster County, PA: vinyl, wood and fiberglass double-hung, casement, bay and egress windows, installed by a licensed local crew.",
 };
 
 const typeIcons: Record<string, ComponentType> = {
@@ -171,6 +174,12 @@ const faqs = [
 export default function WindowReplacementPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([{ name: "Window Replacement", path: "/windows/replacement" }]),
+          serviceSchema({ name: "Window Replacement", path: "/windows/replacement", description: metadata.description as string }),
+        ]}
+      />
       <section className="mx-auto max-w-7xl px-5 sm:px-8 pt-14 sm:pt-20 pb-16 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div>
           <Eyebrow>Windows / Replacement</Eyebrow>
@@ -435,6 +444,13 @@ export default function WindowReplacementPage() {
         </SectionHeading>
         <Faq items={faqs} />
       </section>
+
+      <RelatedPosts slugs={[
+          "window-cost-guide",
+          "insert-vs-full-frame-window-replacement",
+          "replacing-windows-in-winter",
+          "do-new-windows-increase-home-value",
+        ]} />
     </>
   );
 }

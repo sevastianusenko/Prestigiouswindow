@@ -10,12 +10,15 @@ import { Faq } from "@/components/ui/Faq";
 import { DoorIcon, PatioSliderIcon, FrenchDoorIcon, StormDoorIcon } from "@/components/Icons";
 import { getCategoriesFor } from "@/lib/services";
 import { site } from "@/lib/site";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/JsonLd";
+import { RelatedPosts } from "@/components/RelatedPosts";
 
 export const metadata: Metadata = {
   title: "Door Replacement in Lancaster County, PA",
   alternates: { canonical: "/doors/replacement" },
   description:
-    "Entry, patio, sliding, French, and storm door replacement in Lancaster County, PA — fiberglass, steel, wood, and vinyl, fitted and hung by a licensed local crew.",
+    "Entry, patio, sliding, French and storm door replacement in Lancaster County, PA: fiberglass, steel and wood, fitted and hung by a licensed local crew.",
 };
 
 const typeIcons: Record<string, ComponentType> = {
@@ -132,6 +135,12 @@ const faqs = [
 export default function DoorReplacementPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([{ name: "Door Replacement", path: "/doors/replacement" }]),
+          serviceSchema({ name: "Door Replacement", path: "/doors/replacement", description: metadata.description as string }),
+        ]}
+      />
       <section className="mx-auto max-w-7xl px-5 sm:px-8 pt-14 sm:pt-20 pb-16 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div>
           <Eyebrow>Doors / Replacement</Eyebrow>
@@ -371,6 +380,13 @@ export default function DoorReplacementPage() {
         </SectionHeading>
         <Faq items={faqs} />
       </section>
+
+      <RelatedPosts slugs={[
+          "entry-door-materials-steel-fiberglass-wood",
+          "storm-doors-worth-it",
+          "choosing-a-window-door-contractor",
+          "do-new-windows-increase-home-value",
+        ]} />
     </>
   );
 }

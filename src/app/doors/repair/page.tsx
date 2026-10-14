@@ -7,6 +7,9 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { TrustBar } from "@/components/TrustBar";
 import { Faq } from "@/components/ui/Faq";
 import { site } from "@/lib/site";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/JsonLd";
+import { RelatedPosts } from "@/components/RelatedPosts";
 
 export const metadata: Metadata = {
   title: "Door Repair in Lancaster County, PA",
@@ -153,6 +156,12 @@ const faqs = [
 export default function DoorRepairPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([{ name: "Door Repair", path: "/doors/repair" }]),
+          serviceSchema({ name: "Door Repair", path: "/doors/repair", description: metadata.description as string }),
+        ]}
+      />
       <section className="mx-auto max-w-7xl px-5 sm:px-8 pt-14 sm:pt-20 pb-16 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div>
           <Eyebrow>Doors / Repair</Eyebrow>
@@ -343,6 +352,13 @@ export default function DoorRepairPage() {
         </SectionHeading>
         <Faq items={faqs} />
       </section>
+
+      <RelatedPosts slugs={[
+          "patio-sliding-door-repair",
+          "storm-doors-worth-it",
+          "window-screens-casings-small-jobs",
+          "choosing-a-window-door-contractor",
+        ]} />
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8 pb-20">
         <p className="text-xs text-ink/50">{site.license} · {site.serviceCounty}</p>

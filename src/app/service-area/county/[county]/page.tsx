@@ -10,6 +10,8 @@ import { counties, getCounty } from "@/lib/counties";
 import { getTownsByCounty } from "@/lib/towns";
 import { site } from "@/lib/site";
 import { countyContentMap } from "@/content/service-area/counties";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/JsonLd";
 
 export function generateStaticParams() {
   return counties.map((c) => ({ county: c.slug }));
@@ -22,9 +24,11 @@ export async function generateMetadata(
   const county = getCounty(slug);
   if (!county) return {};
   return {
-    title: `Window & Door Replacement in ${county.name}, PA`,
+    // "Windows & Doors in …" rather than "Window & Door Replacement in …" so the
+    // Lancaster County page doesn't carry the exact same title as the homepage.
+    title: `Windows & Doors in ${county.name}, PA`,
     alternates: { canonical: `/service-area/county/${slug}` },
-    description: `Window and door replacement and repair across ${county.name}, PA. ${county.blurb}`,
+    description: `Window and door replacement and repair across ${county.name}, PA. Measured in person, installed by the same licensed crew from East Earl. Free estimates.`,
   };
 }
 
@@ -38,9 +42,23 @@ export default async function CountyPage(
   const townsHere = getTownsByCounty(county.slug);
   const otherCounties = counties.filter((c) => c.slug !== county.slug);
   const Content = countyContentMap[county.slug];
+  const path = `/service-area/county/${county.slug}`;
 
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Service Area", path: "/service-area" },
+            { name: county.name, path },
+          ]),
+          serviceSchema({
+            name: `Window & Door Replacement in ${county.name}, PA`,
+            path,
+            area: { type: "AdministrativeArea", name: `${county.name}, PA` },
+          }),
+        ]}
+      />
       <section className="mx-auto max-w-7xl px-5 sm:px-8 pt-14 sm:pt-20 pb-16 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div>
           <Eyebrow>Service Area · {county.distanceNote}</Eyebrow>

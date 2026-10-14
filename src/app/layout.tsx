@@ -22,9 +22,11 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  // Short brand suffix keeps most titles under ~60 characters so Google
+  // shows them whole; deep pages (blog, categories) opt out of it entirely.
   title: {
-    default: `Window & Door Replacement in ${site.serviceCounty} | ${site.name}`,
-    template: `%s | ${site.name}`,
+    default: `Window & Door Replacement in ${site.serviceCounty} | ${site.shortName}`,
+    template: `%s | ${site.shortName}`,
   },
   description:
     "Precision window and door replacement and repair in Lancaster County, PA. Licensed and insured, based in East Earl.",

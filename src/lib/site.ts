@@ -30,6 +30,7 @@ export const site = {
     brownbook: "https://www.brownbook.net/business/55588378/prestigious-windows-doors",
   },
   license: "PA HIC #PA227671",
+  owner: "Timofey Fomin",
   serviceCounty: "Lancaster County, PA",
   baseTown: "East Earl, PA",
 };

@@ -11,6 +11,8 @@ import {
   type ServiceCategory,
 } from "@/lib/services";
 import { site } from "@/lib/site";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/JsonLd";
 
 export function ServiceCategoryPage({
   category,
@@ -34,6 +36,19 @@ export function ServiceCategoryPage({
 
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: parentLabel, path: parentHref },
+            { name: category.name, path: `${parentHref}/${category.slug}` },
+          ]),
+          serviceSchema({
+            name: category.h1,
+            path: `${parentHref}/${category.slug}`,
+            description: category.description,
+          }),
+        ]}
+      />
       <section className="mx-auto max-w-7xl px-5 sm:px-8 pt-10 sm:pt-14 pb-16">
         <Link
           href={parentHref}

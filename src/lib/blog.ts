@@ -17,7 +17,7 @@ export const posts: BlogPost[] = [
     dek: "Five ways a window actually fails, and how to tell which one you've got before you pick up the phone.",
     description:
       "A homeowner's guide to diagnosing window problems yourself: failed seals, bad balances, cracked glass, rot, and stuck screens, explained plainly.",
-    date: "2026-10-01",
+    date: "2026-09-18",
     readMinutes: 8,
     heroImage: "/photos/window-double-hung.jpg",
     heroAlt: "A newly installed double-hung window, trimmed and caulked",
@@ -29,7 +29,7 @@ export const posts: BlogPost[] = [
     dek: "The haze between the panes isn't dirt, and it won't wipe off. Here's what's actually happening, and what it costs to fix.",
     description:
       "Why window glass fogs up between the panes, what a failed seal actually is, and whether it needs a new sash or a whole new window.",
-    date: "2026-11-01",
+    date: "2026-09-18",
     readMinutes: 8,
     heroImage: "/photos/window-tree-reflection.jpg",
     heroAlt:
@@ -46,7 +46,7 @@ export const posts: BlogPost[] = [
     dek: "It isn't broken. It's unbalanced, and the fix is smaller than you'd think.",
     description:
       "The real reason a double-hung window falls shut or won't stay up on its own, and why it's usually a balance fix, not a new window.",
-    date: "2026-12-01",
+    date: "2026-09-18",
     readMinutes: 8,
     heroImage: "/photos/window-porch-rockers.webp",
     heroAlt: "Double-hung windows along a covered porch with rocking chairs",
@@ -62,7 +62,7 @@ export const posts: BlogPost[] = [
     dek: "A straight answer on price and timeline, plus how to tell a pane swap from a full replacement.",
     description:
       "What it actually costs to fix a cracked window, how long it takes, and how to tell whether you need a new pane or a whole new unit.",
-    date: "2027-01-01",
+    date: "2026-09-18",
     readMinutes: 9,
     heroImage: "/photos/door-glass-decorative.jpg",
     heroAlt:
@@ -79,7 +79,7 @@ export const posts: BlogPost[] = [
     dek: "Real ranges, the variables that move them, and why nobody serious quotes a number over the phone.",
     description:
       "Real window replacement price ranges and the specific things that move them, from a company that measures before it quotes anything.",
-    date: "2027-02-01",
+    date: "2026-09-18",
     readMinutes: 9,
     heroImage: "/photos/house-multi-gable-blue.jpg",
     heroAlt:
@@ -92,7 +92,7 @@ export const posts: BlogPost[] = [
     dek: "Three real options for an original sash, laid out without a sales pitch attached.",
     description:
       "Three honest options for an old single-pane window: repair it, replace it, or add a storm window. What actually decides which one is right.",
-    date: "2027-03-01",
+    date: "2026-09-18",
     readMinutes: 9,
     heroImage: "/photos/window-blue-shutters-gables.jpg",
     heroAlt:
@@ -105,7 +105,7 @@ export const posts: BlogPost[] = [
     dek: "Before you assume the originals have to go, here's how to actually think about it.",
     description:
       "How to think through replacing versus restoring the original windows in an older home, before assuming replacement is the only option.",
-    date: "2027-04-01",
+    date: "2026-09-18",
     readMinutes: 9,
     heroImage: "/photos/house-knight-wood.jpg",
     heroAlt:
@@ -122,7 +122,7 @@ export const posts: BlogPost[] = [
     dek: "Egress code, window wells, and the difference a bedroom makes.",
     description:
       "Basement window installation and repair explained, including when egress code applies and what a window well replacement actually involves.",
-    date: "2027-05-01",
+    date: "2026-09-18",
     readMinutes: 9,
     heroImage: "/photos/window-modern-house-2.jpg",
     heroAlt: "A house exterior with several windows of different sizes",
@@ -139,7 +139,7 @@ export const posts: BlogPost[] = [
     dek: "Not every window problem needs a whole new window. Some of them just need someone willing to show up.",
     description:
       "Window screen repair, casing installation, and other small window jobs that many replacement-only companies won't take on.",
-    date: "2027-06-01",
+    date: "2026-09-18",
     readMinutes: 8,
     heroImage: "/photos/window-porch-pgt.jpg",
     heroAlt:
@@ -156,7 +156,7 @@ export const posts: BlogPost[] = [
     dek: "Rollers, tracks, and alignment: the usual suspects before you assume the whole door is done.",
     description:
       "The most common reasons a sliding patio door sticks or comes off track, and which ones are a repair instead of a full replacement.",
-    date: "2027-07-01",
+    date: "2026-09-18",
     readMinutes: 8,
     heroImage: "/photos/door-slider-white-patio.jpg",
     heroAlt: "A white multi-panel sliding patio door opening onto a brick patio",
@@ -168,7 +168,7 @@ export const posts: BlogPost[] = [
     dek: "Argon, krypton, and the quiet reason a modern window outperforms an old one.",
     description:
       "What the gas fill between window panes actually does, what happens when it leaks, and whether \"gas window repair\" is even a real repair.",
-    date: "2027-08-01",
+    date: "2026-09-18",
     readMinutes: 7,
     heroImage: "/photos/window-tree-reflection.jpg",
     heroAlt:
@@ -181,7 +181,7 @@ export const posts: BlogPost[] = [
     dek: "Ventilation, heat, and the header question that doesn't come up in any other room.",
     description:
       "When it's worth replacing an attic window, what changes structurally versus other rooms, and how attic windows affect heat and ventilation.",
-    date: "2027-09-01",
+    date: "2026-09-18",
     readMinutes: 7,
     heroImage: "/photos/window-blue-shutters-gables.jpg",
     heroAlt:

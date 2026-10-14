@@ -6,6 +6,8 @@ import { TrustBar } from "@/components/TrustBar";
 import { getPost, posts } from "@/lib/blog";
 import { contentMap } from "@/content/blog";
 import { site } from "@/lib/site";
+import { BUSINESS_ID, breadcrumbSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/JsonLd";
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
@@ -18,9 +20,12 @@ export async function generateMetadata(
   const post = getPost(slug);
   if (!post) return {};
   return {
-    title: post.title,
+    // Post titles already run 60–75 characters; the brand suffix would only
+    // get truncated, so blog pages drop it.
+    title: { absolute: post.title },
     description: post.description,
     alternates: { canonical: `/blog/${slug}` },
+    openGraph: { type: "article", images: [{ url: post.heroImage }] },
   };
 }
 
@@ -30,23 +35,41 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
   const Content = contentMap[slug];
   if (!post || !Content) notFound();
 
+  const url = `${site.url}/blog/${post.slug}`;
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
+    mainEntityOfPage: url,
+    url,
     headline: post.title,
     description: post.description,
+    image: `${site.url}${post.heroImage}`,
     datePublished: post.date,
     dateModified: post.date,
-    author: { "@type": "Organization", "@id": `${site.url}/#business`, name: site.name },
-    publisher: { "@type": "Organization", "@id": `${site.url}/#business`, name: site.name },
+    author: {
+      "@type": "Person",
+      name: site.owner,
+      jobTitle: "Owner",
+      worksFor: { "@id": BUSINESS_ID },
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": BUSINESS_ID,
+      name: site.name,
+      logo: { "@type": "ImageObject", url: `${site.url}/logo-real.png` },
+    },
   };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      <JsonLd
+        data={[
+          schema,
+          breadcrumbSchema([
+            { name: "Blog", path: "/blog" },
+            { name: post.title, path: `/blog/${post.slug}` },
+          ]),
+        ]}
       />
       <PostHero post={post} />
       <TrustBar />
