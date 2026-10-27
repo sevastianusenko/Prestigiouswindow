@@ -33,10 +33,16 @@ export default function ContactPage() {
           </div>
           <div className="flex gap-4 border-t border-line pt-4">
             <span className="text-gold w-16 shrink-0">Address</span>
-            <span>
+            <a
+              href={site.social.google}
+              target="_blank"
+              rel="noopener"
+              className="hover:text-gold"
+              title="Open in Google Maps"
+            >
               {site.address.street}, {site.address.city}, {site.address.region}{" "}
               {site.address.zip}
-            </span>
+            </a>
           </div>
           <div className="flex gap-4 border-t border-line pt-4">
             <span className="text-gold w-16 shrink-0">Hours</span>

@@ -67,6 +67,12 @@ const businessSchema = {
     postalCode: site.address.zip,
     addressCountry: "US",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: site.geo.lat,
+    longitude: site.geo.lng,
+  },
+  hasMap: site.social.google,
   areaServed: counties.map((c) => ({
     "@type": "AdministrativeArea",
     name: `${c.name}, PA`,

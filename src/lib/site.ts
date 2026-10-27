@@ -19,6 +19,8 @@ export const site = {
   // Official profiles — all emitted as schema sameAs so Google ties them to the business.
   // `social` ones also get footer icons; `listings` are schema-only.
   social: {
+    // Verified Business Profile. The cid link opens the Maps listing directly.
+    google: "https://maps.google.com/?cid=4299582438441581386",
     facebook: "https://www.facebook.com/profile.php?id=61595134870132",
     houzz: "https://www.houzz.com/pro/webuser-373924482/prestigious-windows-and-doors",
     nextdoor: "https://nextdoor.com/pages/prestigious-windows-doors-east-earl-pa/",
@@ -29,6 +31,8 @@ export const site = {
     alignable: "https://www.alignable.com/east-earl-pa/prestigious-windows-doors",
     brownbook: "https://www.brownbook.net/business/55588378/prestigious-windows-doors",
   },
+  // Pin from the Google Business Profile listing.
+  geo: { lat: 40.171555, lng: -76.025324 },
   license: "PA HIC #PA227671",
   owner: "Timofey Fomin",
   serviceCounty: "Lancaster County, PA",
